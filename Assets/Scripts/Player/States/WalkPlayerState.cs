@@ -25,7 +25,7 @@ public class WalkPlayerState : State
     public override void OnUpdate()
     {
         Move();
-        if (Input.GetAxis("Horizontal") == 0 || Input.GetAxis("Vertical") == 0)
+        if (Input.GetAxis("Horizontal") == 0f && Input.GetAxis("Vertical") == 0f)
         {
             controller.Switch(new HealthStayPlayerState(Machine));
         }

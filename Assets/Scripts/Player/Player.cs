@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using static UnityEngine.UI.GridLayoutGroup;
 
 public class Player : MonoBehaviour
 {
@@ -23,9 +22,9 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        LookToMouse();
         Controller.OnUpdate();
         ChangeBullets();
-        LookToMouse();
     }
     public void ChangeBullets()
     {
@@ -33,7 +32,7 @@ public class Player : MonoBehaviour
         {
             Bullet = SOBullets.ModelBullets[0];
         }
-         if (Input.GetKey(KeyCode.Alpha2))
+        if (Input.GetKey(KeyCode.Alpha2))
         {
             Bullet = SOBullets.ModelBullets[1];
         }
@@ -42,33 +41,30 @@ public class Player : MonoBehaviour
             Bullet = SOBullets.ModelBullets[2];
         }
     }
+
     public void Shoot()
     {
         BulletBase bullet = Instantiate(Bullet.Prefab, SpawnPos.position, Quaternion.identity);
         bullet.Init(Bullet);
         bullet.direction = transform.forward;
     }
+
     public void LookToMouse()
     {
         Vector3 mousePosition = Input.mousePosition;
         Ray ray = Camera.main.ScreenPointToRay(mousePosition);
-        Plane plane = new Plane(Vector3.up, transform.position);
+        Plane plane = new Plane(Vector3.down, rb.transform.position);
 
         if (plane.Raycast(ray, out float distance))
         {
             Vector3 targetPosition = ray.GetPoint(distance);
-            targetPosition.y = transform.position.y; // Устанавливаем Y координату объекта, чтобы сохранить высоту
+            targetPosition.y = rb.transform.position.y; // Устанавливаем Y координату объекта, чтобы сохранить высоту
 
             // Плавное вращение в сторону указателя мыши
-            Quaternion targetRotation = Quaternion.LookRotation(targetPosition - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, PlayerSelf.RotationSpeed * Time.deltaTime);
+            Quaternion targetRotation = Quaternion.LookRotation(targetPosition - rb.transform.position);
+            rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, targetRotation, PlayerSelf.RotationSpeed * Time.deltaTime);
         }
     }
-    public Coroutine PlayCoroutine(IEnumerator enumerator)
-    {
-        return StartCoroutine(enumerator);
-    }
-    
 }
 
 [Serializable]

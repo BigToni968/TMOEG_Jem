@@ -9,6 +9,7 @@ public class HealthStayPlayerState : IdlePlayerState
     private WaitForSeconds waitHealth;
     private WaitForSeconds tickHealth;
     private Coroutine Coroutine;
+
     public HealthStayPlayerState(StateMachine machine) : base(machine)
     {
         Controller = machine as PlayerController;
@@ -16,15 +17,17 @@ public class HealthStayPlayerState : IdlePlayerState
 
     public override void OnFinish()
     {
+        base.OnFinish();
         Controller.Player.StopCoroutine(Coroutine);
     }
 
     public override void OnStart()
     {
         base.OnStart();
+        Controller.Player.rb.velocity = Vector3.zero;
         waitHealth = new WaitForSeconds(Controller.Player.PlayerSelf.DelayHealth);
         tickHealth = new WaitForSeconds(Controller.Player.PlayerSelf.tickHealth);
-        Coroutine = Controller.Player.PlayCoroutine(Delayhealth());
+        Coroutine = Controller.Player.StartCoroutine(Delayhealth());
         Debug.Log("Хп поперло");
     }
 
