@@ -14,5 +14,7 @@ public struct ModelBullet
     public BulletBase Prefab;
     public float Speed;
     public float Damage;
+    public float Price;
     public float TimeLife;
+    public float DelayShoot;
 }

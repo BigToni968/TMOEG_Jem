@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &93229663
+--- !u!1 &24477160
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,24 +131,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 93229664}
+  - component: {fileID: 24477162}
+  - component: {fileID: 24477161}
   m_Layer: 0
-  m_Name: TargetDash
+  m_Name: Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &93229664
+--- !u!114 &24477161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24477160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 196c21cbf8149ab4dabe6461a2e6c047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitEnemies: []
+  waveInfo:
+  - Prefab: {fileID: 1099968814551639062, guid: cd81cc7abcda9f040bb650524527addf, type: 3}
+    DelaySpawn: 5
+    WaitDestroyEnemy: 1
+    MaxEnemies: 10
+  - Prefab: {fileID: 1099968814551639062, guid: cd81cc7abcda9f040bb650524527addf, type: 3}
+    DelaySpawn: 2
+    WaitDestroyEnemy: 0
+    MaxEnemies: 3
+  - Prefab: {fileID: 1099968814551639062, guid: cd81cc7abcda9f040bb650524527addf, type: 3}
+    DelaySpawn: 2
+    WaitDestroyEnemy: 0
+    MaxEnemies: 3
+  - Prefab: {fileID: 1099968814551639062, guid: cd81cc7abcda9f040bb650524527addf, type: 3}
+    DelaySpawn: 5
+    WaitDestroyEnemy: 1
+    MaxEnemies: 5
+  maxWaves: 0
+  curentWave: 1
+  segments: 50
+  radius: 20
+  lineWidth: 0.1
+--- !u!4 &24477162
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93229663}
+  m_GameObject: {fileID: 24477160}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -373,12 +409,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338454049}
-  - component: {fileID: 338454055}
-  - component: {fileID: 338454054}
   - component: {fileID: 338454052}
   - component: {fileID: 338454051}
   - component: {fileID: 338454050}
   - component: {fileID: 338454053}
+  - component: {fileID: 338454054}
+  - component: {fileID: 338454055}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -402,8 +438,7 @@ Transform:
   - {fileID: 981821792}
   - {fileID: 1283283420}
   - {fileID: 2033058756}
-  - {fileID: 1360068443}
-  - {fileID: 93229664}
+  - {fileID: 24477162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &338454050
@@ -504,7 +539,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &338454054
 MonoBehaviour:
@@ -526,14 +561,12 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     Speed: 0
     Damage: 0
-    Price: 0
     TimeLife: 0
   PlayerSelf:
     MaxHealth: 100
     Health: 10
     Speed: 8
-    DashSpeed: 10
-    RotationSpeed: 2
+    RotationSpeed: 3
     SprintSpeed: 10
     tickHealth: 1
     DelayHealth: 5
@@ -941,7 +974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 0, z: -20}
+  m_FollowOffset: {x: 0, y: 0, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1037,7 +1070,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 21, z: -0.000058412552}
+  m_LocalPosition: {x: 0, y: 11, z: -0.000029206276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1244,69 +1277,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 338454049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1360068442
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1360068443}
-  - component: {fileID: 1360068444}
-  m_Layer: 0
-  m_Name: SpawnEnemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1360068443
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360068442}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 338454049}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1360068444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360068442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 196c21cbf8149ab4dabe6461a2e6c047, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitEnemies: []
-  waveInfo:
-  - Prefab: {fileID: 1099968814551639062, guid: cd81cc7abcda9f040bb650524527addf, type: 3}
-    DelaySpawn: 5
-    WaitDestroyEnemy: 1
-    MaxEnemies: 10
-  - Prefab: {fileID: 1099968814551639062, guid: cd81cc7abcda9f040bb650524527addf, type: 3}
-    DelaySpawn: 3
-    WaitDestroyEnemy: 0
-    MaxEnemies: 5
-  - Prefab: {fileID: 1099968814551639062, guid: cd81cc7abcda9f040bb650524527addf, type: 3}
-    DelaySpawn: 10
-    WaitDestroyEnemy: 1
-    MaxEnemies: 4
-  maxWaves: 0
-  curentWave: 1
-  segments: 50
-  radius: 30
-  lineWidth: 0.1
 --- !u!1 &1461665004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,7 +1658,7 @@ Transform:
   m_GameObject: {fileID: 2035116766}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 21, z: -0.000058412552}
+  m_LocalPosition: {x: 0, y: 11, z: -0.000029206276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

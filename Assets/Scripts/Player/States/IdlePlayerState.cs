@@ -31,5 +31,9 @@ public class IdlePlayerState : State
         {
             controller.Switch(new ShootPlayerState(Machine));
         }
+        if (controller.Player.PlayerSelf.Health <= 0f)
+        {
+            controller.Switch(new DeathPlayerState(Machine));
+        }
     }
 }

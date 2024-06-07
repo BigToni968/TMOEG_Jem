@@ -73,6 +73,7 @@ public struct ModelPlayer
     public float MaxHealth;
     public float Health;
     public float Speed;
+    public float DashSpeed;
     public float RotationSpeed;
     public float SprintSpeed;
     public float tickHealth;

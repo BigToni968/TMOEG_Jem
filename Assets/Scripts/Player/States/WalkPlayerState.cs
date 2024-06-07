@@ -33,6 +33,10 @@ public class WalkPlayerState : State
         {
             controller.Switch(new ShootAndWalkPlayerState(Machine));
         }
+        if (controller.Player.PlayerSelf.Health <=  0f)
+        {
+            controller.Switch(new DeathPlayerState(Machine));
+        }
     }
 
     public void Move()
@@ -48,6 +52,10 @@ public class WalkPlayerState : State
         else
         {
             controller.Player.transform.Translate(movement * controller.Player.PlayerSelf.Speed * Time.deltaTime);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            controller.Player.transform.Translate(movement * controller.Player.PlayerSelf.DashSpeed * Time.deltaTime);
         }
 
     }    
