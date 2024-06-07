@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 792bed89c3858e249a6eb507c677b633, type: 3}
+  m_Name: Bullets
+  m_EditorClassIdentifier: 
+  ModelBullets:
+  - Prefab: {fileID: -8393677162573576268, guid: 9be4103fd4352954e8a992eaa905e089, type: 3}
+    Speed: 10
+    Damage: 10
+    TimeLife: 10
+  - Prefab: {fileID: -5414530981349805833, guid: f7266863c4d85ba42a901c05966de9b8, type: 3}
+    Speed: 10
+    Damage: 10
+    TimeLife: 10
+  - Prefab: {fileID: -1242710439462471789, guid: 545e63c3f41199e449824f4e37d78a4f, type: 3}
+    Speed: 10
+    Damage: 10
+    TimeLife: 10
