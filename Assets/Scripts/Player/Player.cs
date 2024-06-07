@@ -19,13 +19,13 @@ public class Player : MonoBehaviour
     {
         Bullet = SOBullets.ModelBullets[0];
         Controller = new PlayerController(this);
-        Controller.Switch(new IdlePlayerState(Controller));
+        Controller.Switch(new HealthStayPlayerState(Controller));
     }
     private void Update()
     {
         Controller.OnUpdate();
         ChangeBullets();
-        //LookToMouse();
+        LookToMouse();
     }
     public void ChangeBullets()
     {
@@ -64,10 +64,11 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, PlayerSelf.RotationSpeed * Time.deltaTime);
         }
     }
-    public void PlayCoroutine(IEnumerator enumerator)
+    public Coroutine PlayCoroutine(IEnumerator enumerator)
     {
-        StartCoroutine(enumerator);
+        return StartCoroutine(enumerator);
     }
+    
 }
 
 [Serializable]
