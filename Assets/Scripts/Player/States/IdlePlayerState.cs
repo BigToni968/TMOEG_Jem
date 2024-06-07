@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class IdlePlayerState : State
+{
+    PlayerController controller;
+    public IdlePlayerState(StateMachine machine) : base(machine)
+    {
+        controller = machine as PlayerController;
+    }
+
+    public override void OnFinish()
+    {
+        // Не трогаем
+    }
+
+    public override void OnStart()
+    {
+        Debug.Log("StateIdle");
+        // Включаем стоячуую анимацию.
+    }
+
+    public override void OnUpdate()
+    {
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            controller.Switch(new WalkPlayerState(Machine));
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            controller.Switch(new ShootPlayerState(Machine));
+        }
+    }
+}
