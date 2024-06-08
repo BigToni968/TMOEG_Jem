@@ -23,6 +23,7 @@ public class IdlePlayerState : State
     public override void OnStart()
     {
         Debug.Log("StateIdle");
+        controller.Player.Animator.SetTrigger("IsIdle");
         // ¬ключаем сто€чуую анимацию.
     }
 

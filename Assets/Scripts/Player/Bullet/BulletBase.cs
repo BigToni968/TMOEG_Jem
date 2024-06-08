@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class BulletBase : MonoBehaviour
+public abstract class BulletBase : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     public ModelBullet Bullet;
     public Vector3 direction;
-    public void Move()
+    public virtual void Move()
     {
         rb.velocity += direction * Bullet.Speed;
     }
@@ -25,5 +25,9 @@ public class BulletBase : MonoBehaviour
     public void Init(ModelBullet model)
     {
         Bullet = model;
+    }
+    public void Find()
+    {
+
     }
 }

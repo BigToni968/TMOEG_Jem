@@ -43,7 +43,22 @@ public class WalkPlayerState : State
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-
+        if (moveHorizontal == 1)
+        {
+            controller.Player.Animator.SetTrigger("IsLeftRun");
+        }
+        if (moveHorizontal != -1)
+        {
+            controller.Player.Animator.SetTrigger("IsRightRun");
+        }
+        if (moveVertical == 1)
+        {
+            controller.Player.Animator.SetTrigger("IsForwardRun");
+        }
+        if (moveVertical == -1)
+        {
+            controller.Player.Animator.SetTrigger("IsBackRun");
+        }
         Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical).normalized;
         //if (Input.GetKey(KeyCode.LeftShift))
         //{
