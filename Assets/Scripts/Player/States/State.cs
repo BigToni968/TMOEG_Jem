@@ -11,5 +11,6 @@ public abstract class State
     }
     public abstract void OnStart();
     public abstract void OnFinish();
+    public abstract void OnFixedUpdate();
     public abstract void OnUpdate();
 }

@@ -42,6 +42,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        Controller.OnFixedUpdate();
+    }
+
     public void Shoot()
     {
         BulletBase bullet = Instantiate(Bullet.Prefab, SpawnPos.position, Quaternion.identity);

@@ -15,6 +15,11 @@ public class DeathPlayerState : State
         //
     }
 
+    public override void OnFixedUpdate()
+    {
+        
+    }
+
     public override void OnStart()
     {
         // ¬ключить анимацию смерти.

@@ -15,6 +15,11 @@ public class ShootPlayerState : State
         
     }
 
+    public override void OnFixedUpdate()
+    {
+        
+    }
+
     public override void OnStart()
     {
         Debug.Log("StateShoot");

@@ -15,6 +15,11 @@ public class IdlePlayerState : State
         // Не трогаем
     }
 
+    public override void OnFixedUpdate()
+    {
+        
+    }
+
     public override void OnStart()
     {
         Debug.Log("StateIdle");

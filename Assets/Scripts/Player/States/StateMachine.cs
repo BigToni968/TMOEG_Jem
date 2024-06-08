@@ -8,5 +8,6 @@ public abstract class StateMachine
 
 
     public abstract void OnUpdate();
+    public abstract void OnFixedUpdate();
     public abstract void Switch(State state);
 }

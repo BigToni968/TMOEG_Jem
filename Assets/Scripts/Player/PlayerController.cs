@@ -8,10 +8,16 @@ public class PlayerController : StateMachine
         Player = player;
     }
 
+    public override void OnFixedUpdate()
+    {
+        Current.OnFixedUpdate();
+    }
+
     public override void OnUpdate()
     {
         Current?.OnUpdate();
     }
+
 
     public override void Switch(State state)
     {
