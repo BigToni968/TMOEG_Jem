@@ -7,7 +7,7 @@ public abstract class BulletBase : MonoBehaviour
     public Vector3 direction;
     public virtual void Move()
     {
-        rb.velocity += direction * Bullet.Speed;
+        rb.velocity = direction * Bullet.Speed;
     }
     private void Update()
     {

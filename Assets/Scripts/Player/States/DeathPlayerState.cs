@@ -23,6 +23,7 @@ public class DeathPlayerState : State
 
     public override void OnStart()
     {
+        controller.Player.Animator.SetBool("Died", true);
         controller.Player.Animator.SetTrigger("IsDie");
         AnimatorStateInfo a = controller.Player.Animator.GetCurrentAnimatorStateInfo(0);
         wait = new WaitForSeconds(a.length);
@@ -41,6 +42,5 @@ public class DeathPlayerState : State
     public IEnumerator WaitAnimDeath()
     {
         yield return wait;
-        
     }
 }

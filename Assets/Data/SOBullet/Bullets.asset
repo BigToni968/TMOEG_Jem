@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: Bullets
   m_EditorClassIdentifier: 
   ModelBullets:
-  - Prefab: {fileID: 6045093724522574448, guid: 9be4103fd4352954e8a992eaa905e089, type: 3}
+  - Prefab: {fileID: 6739221014019584394, guid: 4f1e45dea9128774d9bd96f1f6ca2058, type: 3}
     Speed: 10
     Damage: 10
     Price: 1
     TimeLife: 10
     DelayShoot: 1
     MaxCountEnemy: 1
-  - Prefab: {fileID: 8010295386307235860, guid: f7266863c4d85ba42a901c05966de9b8, type: 3}
+  - Prefab: {fileID: 6892992322973438393, guid: 83cf55bfea9ffd3479b067f10c646c0d, type: 3}
     Speed: 10
     Damage: 10
     Price: 15
     TimeLife: 10
     DelayShoot: 3
     MaxCountEnemy: 1
-  - Prefab: {fileID: 8010295386307235860, guid: f7266863c4d85ba42a901c05966de9b8, type: 3}
+  - Prefab: {fileID: 2180919618665474644, guid: 56377735f3607af489274437735bd656, type: 3}
     Speed: 10
     Damage: 10
     Price: 15
     TimeLife: 10
     DelayShoot: 3
-    MaxCountEnemy: 1
+    MaxCountEnemy: 3

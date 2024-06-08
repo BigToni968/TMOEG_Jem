@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        if (Controller.Current.GetType() == typeof(DeathPlayerState))
+        {
+            return;
+        }
         LookToMouse();
         Controller.OnUpdate();
         ChangeBullets();
@@ -52,12 +56,12 @@ public class Player : MonoBehaviour
         Controller.OnFixedUpdate();
     }
 
-    public void Shoot(IEnumerator enumerator)
+    public void Shoot(IEnumerator enumerator) // Не рабочий
     {
         if (IsShoot[index] == null)
         {
             IsShoot[index] = StartCoroutine(enumerator);
-            BulletBase bullet = Instantiate(Bullet.Prefab, SpawnPos.position, Quaternion.identity);
+            BulletBase bullet = Instantiate(Bullet.Prefab);
             bullet.Init(Bullet);
             bullet.direction = transform.forward;
             PlayerSelf.Health -= Bullet.Price;
@@ -65,7 +69,10 @@ public class Player : MonoBehaviour
     }
     public void ShootAoe()
     {
-        BulletBase bullet = Instantiate(Bullet.Prefab, SpawnPos.position, Quaternion.identity);
+        BulletBase bullet = Instantiate(Bullet.Prefab);
+        bullet.transform.position = SpawnPos.position;
+        bullet.transform.rotation = transform.rotation;
+        bullet.transform.Rotate(new Vector3(-90f, 0f, 0f));
         bullet.Init(Bullet);
         bullet.direction = transform.forward;
         PlayerSelf.Health -= Bullet.Price;
