@@ -21,5 +21,6 @@ namespace Game.Data
         public float RangeDistance;
         public float RangeAttack;
         public float DelayBeetwenAttacks;
+        public float Aiming;
     }
 }
