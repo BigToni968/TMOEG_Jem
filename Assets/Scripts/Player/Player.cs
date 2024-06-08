@@ -19,9 +19,11 @@ public class Player : MonoBehaviour
         Bullet = SOBullets.ModelBullets[0];
         Controller = new PlayerController(this);
         Controller.Switch(new HealthStayPlayerState(Controller));
+        HealthBar.SetMaxValue.Invoke(PlayerSelf.MaxHealth);
     }
     private void Update()
     {
+        HealthBar.ChangeValue.Invoke(PlayerSelf.Health);
         LookToMouse();
         Controller.OnUpdate();
         ChangeBullets();

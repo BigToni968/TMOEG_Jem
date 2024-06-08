@@ -23,7 +23,7 @@ public class ShootPlayerState : State
     public override void OnStart()
     {
         Debug.Log("StateShoot");
-        controller.Player.Shoot();
+        controller.Player.Animator.SetTrigger("IsAttack");
     }
 
     public override void OnUpdate()

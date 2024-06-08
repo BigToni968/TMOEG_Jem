@@ -25,7 +25,8 @@ public class WalkPlayerState : State
 
     public override void OnUpdate()
     {
-        
+        float rotateY = controller.Player.transform.rotation.eulerAngles.y;
+        Debug.Log(rotateY);
         if (Input.GetAxis("Horizontal") == 0f && Input.GetAxis("Vertical") == 0f)
         {
             controller.Switch(new HealthStayPlayerState(Machine));
@@ -43,23 +44,35 @@ public class WalkPlayerState : State
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        if (moveHorizontal == 1)
+
+        float rotateY = controller.Player.transform.rotation.eulerAngles.y ;
+        Debug.Log(rotateY);
+        if (rotateY <= 315 && rotateY > 225)
         {
-            controller.Player.Animator.SetTrigger("IsLeftRun");
+            controller.Player.Animator.SetFloat("RunHorizontal", -moveVertical);
+            controller.Player.Animator.SetFloat("RunVertical", -moveHorizontal);
         }
-        if (moveHorizontal != -1)
+        else if(rotateY > 45 && rotateY <= 135)
         {
-            controller.Player.Animator.SetTrigger("IsRightRun");
-        }
-        if (moveVertical == 1)
+            controller.Player.Animator.SetFloat("RunHorizontal", moveVertical);
+            controller.Player.Animator.SetFloat("RunVertical", moveHorizontal); 
+        }else if(rotateY > 135 && rotateY <= 225)
         {
-            controller.Player.Animator.SetTrigger("IsForwardRun");
+            controller.Player.Animator.SetFloat("RunHorizontal", -moveHorizontal);
+            controller.Player.Animator.SetFloat("RunVertical", -moveVertical);
         }
-        if (moveVertical == -1)
+        else
         {
-            controller.Player.Animator.SetTrigger("IsBackRun");
+
+            controller.Player.Animator.SetFloat("RunHorizontal", moveHorizontal);
+            controller.Player.Animator.SetFloat("RunVertical", moveVertical);
         }
+
+
+
         Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical).normalized;
+
+
         //if (Input.GetKey(KeyCode.LeftShift))
         //{
         //    controller.Player.transform.Translate(movement * controller.Player.PlayerSelf.SprintSpeed * Time.deltaTime);
@@ -68,9 +81,7 @@ public class WalkPlayerState : State
         controller.Player.rb.velocity = (movement * controller.Player.PlayerSelf.Speed * 100 * Time.fixedDeltaTime);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //controller.Player.rb.AddForce(Vector3.Lerp(movement, movement * controller.Player.PlayerSelf.DashSpeed * 100, 0.25f), ForceMode.VelocityChange);
-            controller.Player.rb.velocity = Vector3.Lerp(movement, movement * controller.Player.PlayerSelf.DashSpeed * 100, 0.25f);
-
+            controller.Player.rb.AddForce(Vector3.Lerp(movement, movement * controller.Player.PlayerSelf.DashSpeed * 100, 0.25f), ForceMode.VelocityChange);
         }
 
     }
