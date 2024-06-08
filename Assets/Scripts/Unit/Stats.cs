@@ -6,9 +6,10 @@ namespace Game
     [Serializable]
     public struct StatsData
     {
-        public int HP;
-        public int MaxHP;
-        public int Speed;
+        public float HP;
+        public float MaxHP;
+        public float Speed;
+        public float RotateSpeed;
     }
 
     [Serializable]

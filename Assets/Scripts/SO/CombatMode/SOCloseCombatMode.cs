@@ -19,5 +19,9 @@ namespace Game.Data
     {
         public float SpeedAttack;
         public float RangeAttack;
+        public float Damage;
+        [Tooltip("Дистанция до которой нужно подойти к игроку чтобы урон засчитался")]
+        public float Distance;
+        public float Aiming;
     }
 }
