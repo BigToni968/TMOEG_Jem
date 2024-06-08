@@ -20,8 +20,9 @@ MonoBehaviour:
   <Portrate>k__BackingField: {fileID: 0}
   <Prefab>k__BackingField: {fileID: 8850441612904240368, guid: 6c842d467b43c2d4387aed23df74daa0, type: 3}
   <CombatMode>k__BackingField: {fileID: 11400000, guid: bb1b2a6eb75a6af4d92b5afe39532c79, type: 2}
-  <DamageHitOnDead>k__BackingField: 0
+  <DamageHitOnDead>k__BackingField: 1
   <DelayDestroyAfterDeath>k__BackingField: 1
+  <ObstacleDetectionDistance>k__BackingField: 5
   <Stats>k__BackingField:
     Data:
       HP: 110

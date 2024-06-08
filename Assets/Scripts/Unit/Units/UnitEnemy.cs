@@ -65,6 +65,8 @@ namespace Game
                 Gizmos.DrawWireSphere(transform.position, _closeCombatModel.Model.ReadData.RangeAttack);
                 Gizmos.color = Color.red;
                 Gizmos.DrawWireSphere(transform.position, _closeCombatModel.Model.ReadData.Distance);
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawLine(transform.position, transform.position + transform.forward * Character.ObstacleDetectionDistance);
             }
         }
 

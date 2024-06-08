@@ -12,6 +12,7 @@ namespace Game.Data
         [field: SerializeField] public CombatMode CombatMode { get; private set; }
         [field: SerializeField] public bool DamageHitOnDead { get; private set; }
         [field: SerializeField] public float DelayDestroyAfterDeath { get; private set; }
+        [field: SerializeField] public float ObstacleDetectionDistance { get; private set; }
         [field: SerializeField] public Stats Stats { get; private set; }
 
         public override void Init()
