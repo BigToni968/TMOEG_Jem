@@ -12,13 +12,15 @@ public class Player : MonoBehaviour
     public SOBullets SOBullets;
     public ModelBullet Bullet;
     public ModelPlayer PlayerSelf;
-
+    public Coroutine[] IsShoot;
+    public int index = 0;
 
     private void Start()
     {
         Bullet = SOBullets.ModelBullets[0];
         Controller = new PlayerController(this);
         Controller.Switch(new HealthStayPlayerState(Controller));
+        IsShoot = new Coroutine[4];
     }
     private void Update()
     {
@@ -31,14 +33,17 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha1))
         {
             Bullet = SOBullets.ModelBullets[0];
+            index = 0;
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
             Bullet = SOBullets.ModelBullets[1];
+            index = 1;
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
             Bullet = SOBullets.ModelBullets[2];
+            index = 2;
         }
     }
 
@@ -47,11 +52,20 @@ public class Player : MonoBehaviour
         Controller.OnFixedUpdate();
     }
 
-    public void Shoot()
+    public void Shoot(IEnumerator enumerator)
     {
-        BulletBase bullet = Instantiate(Bullet.Prefab, SpawnPos.position, Quaternion.identity);
-        bullet.Init(Bullet);
-        bullet.direction = transform.forward;
+        if (IsShoot[index] == null)
+        {
+            IsShoot[index] = StartCoroutine(enumerator);
+            BulletBase bullet = Instantiate(Bullet.Prefab, SpawnPos.position, Quaternion.identity);
+            bullet.Init(Bullet);
+            bullet.direction = transform.forward;
+            PlayerSelf.Health -= Bullet.Price;
+        }
+    }
+    public void ClearShoot()
+    {
+        IsShoot[index] = null;
     }
 
     public void LookToMouse()

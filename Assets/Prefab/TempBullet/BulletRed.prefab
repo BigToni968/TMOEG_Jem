@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6176568382139011276}
   - component: {fileID: 3924319619029371959}
   - component: {fileID: 2605525375172477887}
-  - component: {fileID: -5414530981349805833}
   - component: {fileID: 4484457340666072484}
+  - component: {fileID: 8010295386307235860}
   m_Layer: 0
   m_Name: BulletRed
   m_TagString: Untagged
@@ -107,25 +107,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5414530981349805833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8706243651428177411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03314cb30d4015f47876a1807e9f88ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4484457340666072484}
-  Bullet:
-    Prefab: {fileID: 0}
-    Speed: 0
-    Damage: 0
-    TimeLife: 0
-  direction: {x: 0, y: 0, z: 0}
 --- !u!54 &4484457340666072484
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -153,3 +134,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8010295386307235860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706243651428177411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb628194b02a2b48b9cfd4552425f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4484457340666072484}
+  Bullet:
+    Prefab: {fileID: 0}
+    Speed: 0
+    Damage: 0
+    Price: 0
+    TimeLife: 0
+    DelayShoot: 0
+  direction: {x: 0, y: 0, z: 0}

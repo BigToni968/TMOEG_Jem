@@ -1,18 +1,20 @@
+using Game;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PiercingAttack : MonoBehaviour
+public class PiercingAttack : BulletBase
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.TryGetComponent<IDamageHit>(out IDamageHit hit))
+        {
+            Bullet.MaxCountEnemy--;
+            hit.Take(Bullet.Damage);
+            if (Bullet.MaxCountEnemy <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

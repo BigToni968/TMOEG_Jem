@@ -9,7 +9,12 @@ public class StrongAttack : BulletBase
     {
         if (other.TryGetComponent<IDamageHit>(out IDamageHit hit))
         {
+            Bullet.MaxCountEnemy--;
             hit.Take(Bullet.Damage);
+            if (Bullet.MaxCountEnemy <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -593,6 +593,7 @@ MonoBehaviour:
     Price: 0
     TimeLife: 0
     DelayShoot: 0
+    MaxCountEnemy: 0
   PlayerSelf:
     MaxHealth: 100
     Health: 10
@@ -1779,9 +1780,10 @@ MonoBehaviour:
     Price: 0
     TimeLife: 0
     DelayShoot: 0
+    MaxCountEnemy: 0
   PlayerSelf:
     MaxHealth: 100
-    Health: 10
+    Health: 50
     Speed: 10
     DashSpeed: 10
     RotationSpeed: 3
