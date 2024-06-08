@@ -4,11 +4,13 @@ using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
 using System.Runtime.CompilerServices;
+using Game.Data;
+using Game;
 
 public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] private WaitForSeconds wait;
-    [SerializeField] public List<Enemy> unitEnemies;
+    [SerializeField] public List<Unit> unitEnemies;
     public WaveInfo[] waveInfo;
     private bool isLock = false;
     private int indexWave;
@@ -42,8 +44,9 @@ public class SpawnEnemy : MonoBehaviour
             for (int j = 0; j < waveInfo[i].MaxEnemies; j++)
             {
                 Vector3 spawnPoint = GetRandomPointOnCircle();
-                Enemy prefab = Instantiate(waveInfo[i].Prefab, spawnPoint + transform.position, Quaternion.identity);
-                unitEnemies.Add(prefab);
+                Unit instance = Instantiate(waveInfo[i].Character.Prefab, spawnPoint + transform.position, Quaternion.identity);
+                instance.Init(waveInfo[i].Character);
+                unitEnemies.Add(instance);
             }
         }
     }
@@ -53,7 +56,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             // ѕроверку по здоровью дл€ удалени€ мобов.
         }
-        isLock = !(unitEnemies.Count == 0);;
+        isLock = !(unitEnemies.Count == 0); ;
     }
 
     private void SetupCircle()
@@ -84,13 +87,14 @@ public class SpawnEnemy : MonoBehaviour
         float angle = segmentIndex * (360f / segments);
         float x = Mathf.Sin(Mathf.Deg2Rad * angle) * radius;
         float y = Mathf.Cos(Mathf.Deg2Rad * angle) * radius;
-        return new Vector3(x, 0f, y);
+        return new Vector3(x, 5f, y);
     }
 }
 [Serializable]
 public struct WaveInfo
 {
-    public Enemy Prefab;
+    [Header("Enemy model unit")]
+    public Character Character;
     public float DelaySpawn;
     public bool WaitDestroyEnemy;
     public int MaxEnemies;
