@@ -27,3 +27,10 @@ MonoBehaviour:
     TimeLife: 10
     DelayShoot: 3
     MaxCountEnemy: 1
+  - Prefab: {fileID: 8010295386307235860, guid: f7266863c4d85ba42a901c05966de9b8, type: 3}
+    Speed: 10
+    Damage: 10
+    Price: 15
+    TimeLife: 10
+    DelayShoot: 3
+    MaxCountEnemy: 1

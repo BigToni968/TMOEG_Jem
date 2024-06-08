@@ -22,9 +22,5 @@ public class WeaponCell : MonoBehaviour
         {
             _image.sprite = _sprites[2];
         }
-        if (Input.GetKey(KeyCode.Alpha4))
-        {
-            _image.sprite = _sprites[3];
-        }
     }
 }

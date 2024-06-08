@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeathPlayerState : State
 {
     public PlayerController controller;
+    public WaitForSeconds wait;
     public DeathPlayerState(StateMachine machine) : base(machine)
     {
         controller = machine as PlayerController;
@@ -22,7 +23,11 @@ public class DeathPlayerState : State
 
     public override void OnStart()
     {
-        // ¬ключить анимацию смерти.
+        controller.Player.Animator.SetTrigger("IsDie");
+        AnimatorStateInfo a = controller.Player.Animator.GetCurrentAnimatorStateInfo(0);
+        wait = new WaitForSeconds(a.length);
+        controller.Player.StartCoroutine(WaitAnimDeath());
+
     }
 
     public override void OnUpdate()
@@ -31,5 +36,11 @@ public class DeathPlayerState : State
         {
             controller.Switch(new IdlePlayerState(Machine));            
         }
+    }
+
+    public IEnumerator WaitAnimDeath()
+    {
+        yield return wait;
+        
     }
 }

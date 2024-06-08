@@ -20,9 +20,11 @@ public class ShootAndWalkPlayerState : WalkPlayerState
     public override void OnStart()
     {
         base.OnStart();
-        wait = new WaitForSeconds(controller.Player.Bullet.DelayShoot);
-        controller.Player.Shoot(DelayShoot());
-        Debug.Log("StateShoot");
+        AnimatorStateInfo a = controller.Player.Animator.GetCurrentAnimatorStateInfo(0);
+        if (!a.IsName("mixamo.com(1)"))
+        {
+            controller.Player.Animator.SetTrigger("IsAttack");
+        }
     }
 
     public override void OnUpdate()

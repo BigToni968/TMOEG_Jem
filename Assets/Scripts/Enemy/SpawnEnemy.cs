@@ -13,6 +13,8 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] public List<Unit> unitEnemies;
     public WaveInfo[] waveInfo;
     private bool isLock = false;
+    public int AllEnemies;
+    public int countDeathEnemies;
     private int indexWave;
     public int maxWaves;
     public int curentWave = 1;
@@ -54,7 +56,11 @@ public class SpawnEnemy : MonoBehaviour
     {
         for (int i = unitEnemies.Count - 1; i >= 0; i--)
         {
-            // ѕроверку по здоровью дл€ удалени€ мобов.
+            if (unitEnemies[i].Stats.ReadData.HP <= 0)
+            {
+                countDeathEnemies++;
+                unitEnemies.Remove(unitEnemies[i]);
+            }
         }
         isLock = !(unitEnemies.Count == 0); ;
     }

@@ -16,7 +16,7 @@ public class ShootPlayerState : State
 
     public override void OnFinish()
     {
-        
+
     }
 
     public override void OnFixedUpdate()
@@ -27,11 +27,11 @@ public class ShootPlayerState : State
     public override void OnStart()
     {
         //controller.Player.Animator.SetTrigger("IsShoot");
-        //AnimatorStateInfo a = controller.Player.Animator.GetCurrentAnimatorStateInfo(0);
-        //timeAnimation = 1;
-        wait = new WaitForSeconds(controller.Player.Bullet.DelayShoot);
-        controller.Player.Shoot(DelayShoot());
-        Debug.Log("StateShoot");
+        AnimatorStateInfo a = controller.Player.Animator.GetCurrentAnimatorStateInfo(0);
+        if (!a.IsName("mixamo.com(1)"))
+        {
+            controller.Player.Animator.SetTrigger("IsAttack");
+        }
     }
 
     public override void OnUpdate()

@@ -63,6 +63,13 @@ public class Player : MonoBehaviour
             PlayerSelf.Health -= Bullet.Price;
         }
     }
+    public void ShootAoe()
+    {
+        BulletBase bullet = Instantiate(Bullet.Prefab, SpawnPos.position, Quaternion.identity);
+        bullet.Init(Bullet);
+        bullet.direction = transform.forward;
+        PlayerSelf.Health -= Bullet.Price;
+    }
     public void ClearShoot()
     {
         IsShoot[index] = null;

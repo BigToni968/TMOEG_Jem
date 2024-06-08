@@ -319,12 +319,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257999871}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.198, z: 0.338}
+  m_LocalRotation: {x: -0.042249177, y: -0.042250607, z: -0.70584536, w: -0.7058416}
+  m_LocalPosition: {x: 0.039, y: 0.009, z: 0.494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1349261167}
+  m_Father: {fileID: 450255788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &281654160
 GameObject:
@@ -593,6 +593,7 @@ MonoBehaviour:
     Price: 0
     TimeLife: 0
     DelayShoot: 0
+    MaxCountEnemy: 0
   PlayerSelf:
     MaxHealth: 100
     Health: 10
@@ -603,6 +604,7 @@ MonoBehaviour:
     tickHealth: 1
     DelayHealth: 5
     HealthRecovery: 2
+  index: 0
 --- !u!114 &338454055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,31 +628,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14
+      value: 0.205
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.309
+      value: 0.064
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.25881878
+      value: 0.7071063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00000057513637
+      value: 0.00000089809316
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.96592593
+      value: -0.7071073
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000033325642
+      value: 0.0000000033080596
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -658,7 +660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -150
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -670,7 +672,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 257999872}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4465cdf6ccc672c43a3d2414f72d0a7a, type: 3}
 --- !u!4 &450255788 stripped
@@ -1696,9 +1701,6 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c7581f354ec087c49bccdb8a12ef6204, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 257999872}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c7581f354ec087c49bccdb8a12ef6204, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 24477162}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c7581f354ec087c49bccdb8a12ef6204, type: 3}
       insertIndex: -1
@@ -1779,9 +1781,10 @@ MonoBehaviour:
     Price: 0
     TimeLife: 0
     DelayShoot: 0
+    MaxCountEnemy: 0
   PlayerSelf:
     MaxHealth: 100
-    Health: 10
+    Health: 50
     Speed: 10
     DashSpeed: 10
     RotationSpeed: 3
@@ -1789,6 +1792,7 @@ MonoBehaviour:
     tickHealth: 1
     DelayHealth: 5
     HealthRecovery: 2
+  index: 0
 --- !u!54 &1349261170
 Rigidbody:
   m_ObjectHideFlags: 0
