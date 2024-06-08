@@ -1,3 +1,4 @@
+using Patterns;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine;
 public class ShootPlayerState : State
 {
     PlayerController controller;
+    private WaitForSeconds wait;
+    private Coroutine Coroutine;
+    private float timeAnimation;
     public ShootPlayerState(StateMachine machine) : base(machine)
     {
         controller = machine as PlayerController;
@@ -17,22 +21,31 @@ public class ShootPlayerState : State
 
     public override void OnFixedUpdate()
     {
-        
+
     }
 
     public override void OnStart()
     {
+        //controller.Player.Animator.SetTrigger("IsShoot");
+        //AnimatorStateInfo a = controller.Player.Animator.GetCurrentAnimatorStateInfo(0);
+        //timeAnimation = 1;
+        wait = new WaitForSeconds(controller.Player.Bullet.DelayShoot);
+        controller.Player.Shoot(DelayShoot());
         Debug.Log("StateShoot");
-        controller.Player.Animator.SetTrigger("IsAttack");
     }
 
     public override void OnUpdate()
     {
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        //timeAnimation -= Time.deltaTime;
+        //if (timeAnimation >= 0f)
+        //{
+        //    return;
+        //}
+        if (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)
         {
             controller.Switch(new WalkPlayerState(Machine));
         }
-        if(Input.GetAxis("Horizontal") == 0 || Input.GetAxis("Vertical") == 0)
+        if (Input.GetAxis("Horizontal") == 0f || Input.GetAxis("Vertical") == 0f)
         {
             controller.Switch(new HealthStayPlayerState(Machine));
         }
@@ -40,5 +53,11 @@ public class ShootPlayerState : State
         {
             controller.Switch(new DeathPlayerState(Machine));
         }
+    }
+
+    public IEnumerator DelayShoot()
+    {
+        yield return wait;
+        controller.Player.ClearShoot();
     }
 }

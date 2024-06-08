@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShootAndWalkPlayerState : WalkPlayerState
 {
     public PlayerController controller;
+    private Coroutine Coroutine;
+    private WaitForSeconds wait;
     public ShootAndWalkPlayerState(StateMachine machine) : base(machine)
     {
         controller = machine as PlayerController;
@@ -18,12 +20,18 @@ public class ShootAndWalkPlayerState : WalkPlayerState
     public override void OnStart()
     {
         base.OnStart();
-        controller.Player.Shoot();
+        wait = new WaitForSeconds(controller.Player.Bullet.DelayShoot);
+        controller.Player.Shoot(DelayShoot());
+        Debug.Log("StateShoot");
     }
 
     public override void OnUpdate()
     {
         base.OnUpdate();
     }
-
+    public IEnumerator DelayShoot()
+    {
+        yield return wait;
+        controller.Player.ClearShoot();
+    }
 }

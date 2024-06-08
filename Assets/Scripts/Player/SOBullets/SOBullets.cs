@@ -17,4 +17,5 @@ public struct ModelBullet
     public float Price;
     public float TimeLife;
     public float DelayShoot;
+    public int MaxCountEnemy;
 }

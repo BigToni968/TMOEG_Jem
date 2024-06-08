@@ -26,8 +26,5 @@ public abstract class BulletBase : MonoBehaviour
     {
         Bullet = model;
     }
-    public void Find()
-    {
-
-    }
+    public virtual void Find() { }
 }
