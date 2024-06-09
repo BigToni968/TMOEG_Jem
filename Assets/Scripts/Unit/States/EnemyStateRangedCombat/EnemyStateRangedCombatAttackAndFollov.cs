@@ -13,6 +13,7 @@ namespace Game
         public override void Start()
         {
             base.Start();
+            Control.Owner.Animator.SetTrigger("IsAttack");
             _bots = 1 << LayerMask.NameToLayer("Enemy");
         }
 

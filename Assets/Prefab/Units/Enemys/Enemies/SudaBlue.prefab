@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5893669473297425740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &273660767043910562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5877219783474922990}
+  m_Layer: 0
+  m_Name: TargetRangedAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5877219783474922990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273660767043910562}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.63, z: 1.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3497639408097539720}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859347930533251684
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +103,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3497639408097539720}
+  - component: {fileID: 7156259715796000750}
   - component: {fileID: 8044416749792051147}
+  - component: {fileID: 6356399994273098473}
+  - component: {fileID: 4361064370825988426}
   m_Layer: 0
   m_Name: SudaBlue
   m_TagString: Untagged
@@ -97,8 +131,34 @@ Transform:
   - {fileID: 5597319428343138123}
   - {fileID: 207103127287254328}
   - {fileID: 5786255157239135421}
+  - {fileID: 5877219783474922990}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7156259715796000750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385589343621385752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56d1340169e56b4d998f875830eb75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DamageHitOnDead>k__BackingField: 0
+  <IsDead>k__BackingField: 0
+  <Animator>k__BackingField: {fileID: 8044416749792051147}
+  <Rigidbody>k__BackingField: {fileID: 4361064370825988426}
+  <TargetCastProjectile>k__BackingField: {fileID: 5877219783474922990}
+  <Character>k__BackingField: {fileID: 11400000, guid: 7e32a50b7d23d23409ff7d39d72b1935, type: 2}
+  <Stats>k__BackingField:
+    Data:
+      HP: 0
+      MaxHP: 0
+      Speed: 0
+      RotateSpeed: 0
+  <Gizmo>k__BackingField: 0
 --- !u!95 &8044416749792051147
 Animator:
   serializedVersion: 5
@@ -120,6 +180,54 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &6356399994273098473
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385589343621385752}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 0.8257971}
+  m_Center: {x: 0, y: 1, z: 0.15854073}
+--- !u!54 &4361064370825988426
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385589343621385752}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1456508637140746737
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +681,7 @@ Transform:
   m_GameObject: {fileID: 5512626757195177018}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000023920182, y: -0.000039562638, z: -0.0000011277949, w: 1}
-  m_LocalPosition: {x: -0.0000034621835, y: 1.7047361, z: 0.008530706}
+  m_LocalPosition: {x: -0.0000034621835, y: 0, z: 0.008530706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

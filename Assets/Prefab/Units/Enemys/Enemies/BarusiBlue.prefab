@@ -231,7 +231,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8115605757364510894}
+  - component: {fileID: 3656929210535507465}
   - component: {fileID: 5724410395675898992}
+  - component: {fileID: 1798561793001458908}
+  - component: {fileID: 6709252290143901702}
   m_Layer: 0
   m_Name: BarusiBlue
   m_TagString: Untagged
@@ -254,8 +257,34 @@ Transform:
   m_Children:
   - {fileID: 9131948027487681226}
   - {fileID: 715682817158487977}
+  - {fileID: 7403274007254630479}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3656929210535507465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991484826821832167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56d1340169e56b4d998f875830eb75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DamageHitOnDead>k__BackingField: 0
+  <IsDead>k__BackingField: 0
+  <Animator>k__BackingField: {fileID: 5724410395675898992}
+  <Rigidbody>k__BackingField: {fileID: 6709252290143901702}
+  <TargetCastProjectile>k__BackingField: {fileID: 7403274007254630479}
+  <Character>k__BackingField: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
+  <Stats>k__BackingField:
+    Data:
+      HP: 0
+      MaxHP: 0
+      Speed: 0
+      RotateSpeed: 0
+  <Gizmo>k__BackingField: 0
 --- !u!95 &5724410395675898992
 Animator:
   serializedVersion: 5
@@ -277,6 +306,54 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1798561793001458908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991484826821832167}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 0.9770843}
+  m_Center: {x: 0, y: 1, z: 0.10311955}
+--- !u!54 &6709252290143901702
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991484826821832167}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5124753853720062846
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +512,37 @@ Transform:
   m_Children:
   - {fileID: 7575551347950358841}
   m_Father: {fileID: 3109779436476602532}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7775336171076302023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7403274007254630479}
+  m_Layer: 0
+  m_Name: TargetRangedAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7403274007254630479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775336171076302023}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.02, z: 1.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8115605757364510894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8260336733151824711
 GameObject:

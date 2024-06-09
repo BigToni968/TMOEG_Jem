@@ -19,6 +19,7 @@ namespace Game
         public override void Start()
         {
             base.Start();
+            Control.Owner.Animator.SetTrigger("IsAttack");
             _coroutine = Control.Owner.StartCoroutine(Aiming());
         }
 

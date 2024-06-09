@@ -11,6 +11,7 @@ namespace Game
         public override void Start()
         {
             base.Start();
+            Control.Owner.Animator.SetTrigger("IsWalk");
             _bots = 1 << LayerMask.NameToLayer("Enemy");
         }
 

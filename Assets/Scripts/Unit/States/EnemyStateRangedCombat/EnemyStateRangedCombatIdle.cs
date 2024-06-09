@@ -9,6 +9,12 @@ namespace Game
         {
         }
 
+        public override void Start()
+        {
+            base.Start();
+            Control.Owner.Animator.SetTrigger("IsWalk");
+        }
+
         public override void Update()
         {
             base.Update();
