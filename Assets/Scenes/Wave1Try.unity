@@ -10315,13 +10315,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 836325269}
     - target: {fileID: 5351158239556784135, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
-      propertyPath: buttonRepit
-      value: 
-      objectReference: {fileID: 9152587560834625019}
-    - target: {fileID: 5351158239556784135, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: infoSpawnEnemy
       value: 
       objectReference: {fileID: 24477161}
+    - target: {fileID: 5351158239556784135, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
+      propertyPath: titeButtonAncoumentsLeftNext
+      value: 
+      objectReference: {fileID: 1569049898}
     - target: {fileID: 5720120357847108569, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10379,17 +10379,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 940321580708373568, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
   m_PrefabInstance: {fileID: 9152587560834625017}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9152587560834625019 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8206224917779823272, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
-  m_PrefabInstance: {fileID: 9152587560834625017}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

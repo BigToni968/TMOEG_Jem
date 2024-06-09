@@ -10326,6 +10326,10 @@ PrefabInstance:
       propertyPath: infoSpawnEnemy
       value: 
       objectReference: {fileID: 24477161}
+    - target: {fileID: 5351158239556784135, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
+      propertyPath: titeButtonAncoumentsLeftNext
+      value: 
+      objectReference: {fileID: 1569049898}
     - target: {fileID: 5720120357847108569, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

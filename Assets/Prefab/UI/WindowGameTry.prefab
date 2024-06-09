@@ -2461,6 +2461,6 @@ MonoBehaviour:
   titeButtonAncoumentsRight: {fileID: 8885418826401831478}
   titeButtonAncoumentsLeftNext: {fileID: 8885418826401831478}
   buttonNext: {fileID: 0}
-  buttonRepit: {fileID: 0}
+  buttonRepit: {fileID: 8206224917779823272}
   infoSpawnEnemy: {fileID: 0}
   panelAncouments: {fileID: 9108920955739122143}
