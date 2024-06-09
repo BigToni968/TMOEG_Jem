@@ -63,7 +63,6 @@ public class WalkPlayerState : State
         }
         else
         {
-
             controller.Player.Animator.SetFloat("RunHorizontal", moveHorizontal);
             controller.Player.Animator.SetFloat("RunVertical", moveVertical);
         }
