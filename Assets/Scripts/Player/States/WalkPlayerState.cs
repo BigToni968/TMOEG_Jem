@@ -28,7 +28,7 @@ public class WalkPlayerState : State
 
     public override void OnUpdate()
     {
-        RecoveryDash();
+        //RecoveryDash();
         float rotateY = controller.Player.transform.rotation.eulerAngles.y;
         Debug.Log(rotateY);
         if (Input.GetAxis("Horizontal") == 0f && Input.GetAxis("Vertical") == 0f)
@@ -85,31 +85,31 @@ public class WalkPlayerState : State
         else
         {
             controller.Player.rb.velocity = (movement * controller.Player.PlayerSelf.Speed * 100 * Time.fixedDeltaTime);
-            controller.Player.timer += 0.15f * Time.fixedDeltaTime;
+            controller.Player.timer += 0.07f * Time.fixedDeltaTime;
             controller.Player.timer = Mathf.Clamp(controller.Player.timer, 0, controller.Player.PlayerSelf.ReloadTimeForDash);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            controller.Player.rb.AddForce(Vector3.Lerp(movement, movement * controller.Player.PlayerSelf.DashSpeed * 100, 0.25f), ForceMode.VelocityChange);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    controller.Player.rb.AddForce(Vector3.Lerp(movement, movement * controller.Player.PlayerSelf.DashSpeed * 100, 0.25f), ForceMode.VelocityChange);
+        //}
 
     }
-    public void RecoveryDash()
-    {
-        wait ??= new WaitForSeconds(controller.Player.PlayerSelf.ReloadTimeForDash);
-        if (controller.Player.timer <= 0)
-        {
-            controller.Player.DelaySprint(DelayDash());
-        }
-    }
+    //public void RecoveryDash()
+    //{
+    //    wait ??= new WaitForSeconds(controller.Player.PlayerSelf.TimeForDash);
+    //    if (controller.Player.timer <= 0)
+    //    {
+    //        controller.Player.DelaySprint(DelayDash());
+    //    }
+    //}
 
-    public IEnumerator DelayDash()
-    {
-        yield return wait;
-        controller.Player.timer = controller.Player.PlayerSelf.ReloadTimeForDash;
-        controller.Player.coroutineDash = null;
-    }
+    //public IEnumerator DelayDash()
+    //{
+    //    yield return wait;
+    //    controller.Player.timer = controller.Player.PlayerSelf.ReloadTimeForDash;
+    //    controller.Player.coroutineDash = null;
+    //}
 
     public override void OnFixedUpdate()
     {

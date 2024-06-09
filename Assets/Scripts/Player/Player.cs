@@ -171,4 +171,5 @@ public struct ModelPlayer
     public float DelayHealth;
     public float HealthRecovery;
     public float ReloadTimeForDash;
+    public float TimeForDash;
 }
