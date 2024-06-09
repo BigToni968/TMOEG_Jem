@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public ModelPlayer PlayerSelf;
     public Coroutine[] IsShoot;
     public int index = 0;
+    public float timer = 3f;
+    public Coroutine coroutineDash;
 
     private void Start()
     {
@@ -130,6 +132,13 @@ public class Player : MonoBehaviour
     {
         IsShoot[index] = null;
     }
+    public void DelaySprint(IEnumerator enumerator)
+    {
+        if (coroutineDash == null)
+        {
+            coroutineDash = StartCoroutine(enumerator);
+        }
+    }  
 
     public void LookToMouse()
     {
@@ -161,4 +170,5 @@ public struct ModelPlayer
     public float tickHealth;
     public float DelayHealth;
     public float HealthRecovery;
+    public float ReloadTimeForDash;
 }
