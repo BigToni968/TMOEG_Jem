@@ -155,30 +155,22 @@ MonoBehaviour:
   unitEnemies: []
   waveInfo:
   - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
+    DelaySpawn: 3
+    WaitDestroyEnemy: 0
+    MaxEnemies: 10
+  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
     DelaySpawn: 2
+    WaitDestroyEnemy: 1
+    MaxEnemies: 10
+  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
+    DelaySpawn: 4
     WaitDestroyEnemy: 0
     MaxEnemies: 5
-  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 3
-    WaitDestroyEnemy: 1
-    MaxEnemies: 3
-  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 3
+  - Character: {fileID: 11400000, guid: a0cb1e9e2e0336c4ebcabccc895332aa, type: 2}
+    DelaySpawn: 4
     WaitDestroyEnemy: 0
-    MaxEnemies: 3
-  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 3
-    WaitDestroyEnemy: 0
-    MaxEnemies: 3
-  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 3
-    WaitDestroyEnemy: 0
-    MaxEnemies: 3
-  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 3
-    WaitDestroyEnemy: 0
-    MaxEnemies: 3
-  AllEnemies: 20
+    MaxEnemies: 5
+  AllEnemies: 30
   countDeathEnemies: 0
   maxWaves: 0
   curentWave: 1
@@ -748,7 +740,9 @@ MonoBehaviour:
     tickHealth: 1
     DelayHealth: 5
     HealthRecovery: 2
+    ReloadTimeForDash: 0
   index: 0
+  timer: 3
 --- !u!114 &338454055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,6 +1274,8 @@ MonoBehaviour:
   _image: {fileID: 1226786940}
   _sprites:
   - {fileID: 21300000, guid: 65d4cb47f6bc68441abf329f293cea89, type: 3}
+  - {fileID: 21300000, guid: ded8404f0e6aff24b87feaea0918d83b, type: 3}
+  _index: 1
 --- !u!114 &752630487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1294,6 +1290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1349261169}
   healthBar: {fileID: 1211977692235275780}
+  StaminaBar: {fileID: 0}
   titleWave: {fileID: 92175888}
   countEnemys: {fileID: 1515291154}
   infoSpawnEnemy: {fileID: 24477161}
@@ -2489,7 +2486,7 @@ MonoBehaviour:
   Animator: {fileID: 1349261166}
   rb: {fileID: 1349261170}
   SpawnPos: {fileID: 257999872}
-  SOBullets: {fileID: 11400000, guid: 6688ce91deaec1b4b8954d5f0f0ed27e, type: 2}
+  SOBullets: {fileID: 11400000, guid: b87d76f5b1417ff449630169e64f2d76, type: 2}
   Bullet:
     Prefab: {fileID: 0}
     Speed: 0
@@ -2508,7 +2505,9 @@ MonoBehaviour:
     tickHealth: 0.85
     DelayHealth: 0.5
     HealthRecovery: 5
-  index: 0
+    ReloadTimeForDash: 0
+  index: 1
+  timer: 3
 --- !u!54 &1349261170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3121,7 +3120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034958622}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.4, y: 2.34, z: 29.7}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
