@@ -6818,7 +6818,7 @@ MonoBehaviour:
     SprintSpeed: 10
     tickHealth: 0.85
     DelayHealth: 0.4
-    HealthRecovery: 5
+    HealthRecovery: 3
     ReloadTimeForDash: 5
     TimeForDash: 0
     _StaminaRecoveryKof: 0.26
@@ -10358,6 +10358,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 4190066716194728810}
+    - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
+      propertyPath: _sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: c27f891e6364f7f489548632fe2b3217, type: 3}
     - target: {fileID: 9051372028675796639, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: m_Name
       value: WindowGameTry

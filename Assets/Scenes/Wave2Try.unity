@@ -6818,7 +6818,7 @@ MonoBehaviour:
     ReloadTimeForDash: 5
     TimeForDash: 0
     _StaminaRecoveryKof: 0.26
-  index: 0
+  index: 1
   timer: 3
 --- !u!54 &1349261170
 Rigidbody:
@@ -10350,6 +10350,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 4190066716194728810}
+    - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
+      propertyPath: _index
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: _sprites.Array.size
       value: 2
