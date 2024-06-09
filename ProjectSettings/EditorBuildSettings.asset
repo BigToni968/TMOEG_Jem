@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wave7Try.unity
     guid: 22e70cbe01469fe4db7334c00a287b97
+  - enabled: 1
+    path: Assets/Scenes/Galery.unity
+    guid: c4379fa77a585f040bf0fe148e3298db
   m_configObjects: {}
