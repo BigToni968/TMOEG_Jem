@@ -16,7 +16,7 @@ namespace Game
         public UnitControl UnitControl { get; }
     }
 
-    public abstract class Unit : MonoInitialization, IUnit, IInitialization<Character>, IDamageHit
+    public abstract class Unit : MonoInitialization, IUnit, IInitialization<Character>, IUpdater, IDamageHit
     {
         [field: SerializeField] public bool DamageHitOnDead { get; private set; }
         [field: SerializeField] public bool IsDead { get; protected set; } = false;
@@ -33,6 +33,11 @@ namespace Game
             DamageHitOnDead = Character.DamageHitOnDead;
             Stats.Set((Character.Stats.Copy() as Stats).Data);
             Init();
+        }
+
+        public virtual void OnUpdate()
+        {
+            UnitControl?.OnUpdate();
         }
 
         public virtual void Take(float damage) { }
