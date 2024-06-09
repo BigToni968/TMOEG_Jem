@@ -741,6 +741,7 @@ MonoBehaviour:
     DelayHealth: 5
     HealthRecovery: 2
     ReloadTimeForDash: 0
+    TimeForDash: 0
   index: 0
   timer: 0
 --- !u!114 &338454055
@@ -1319,7 +1320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1349261169}
   healthBar: {fileID: 1211977692235275780}
-  StaminaBar: {fileID: 0}
+  StaminaBar: {fileID: 515639116}
   titleWave: {fileID: 92175888}
   countEnemys: {fileID: 1515291154}
   infoSpawnEnemy: {fileID: 24477161}
@@ -2610,8 +2611,9 @@ MonoBehaviour:
     DelayHealth: 5
     HealthRecovery: 2
     ReloadTimeForDash: 3
+    TimeForDash: 10
   index: 0
-  timer: 0
+  timer: 3
 --- !u!54 &1349261170
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -22,8 +22,9 @@ namespace Game
         [field: SerializeField] public bool IsDead { get; protected set; } = false;
         [field: SerializeField] public Animator Animator { get; protected set; }
         [field: SerializeField] public Rigidbody Rigidbody { get; protected set; }
+        [field: SerializeField] public Transform TargetCastProjectile { get; protected set; }
+        [field: SerializeField] public Character Character { get; protected set; }
         [field: SerializeField] public Stats Stats { get; protected set; }
-        public Character Character { get; protected set; }
         public EventSystem EventSystem { get; private set; }
         public UnitControl UnitControl { get; protected set; }
 
@@ -41,5 +42,14 @@ namespace Game
         }
 
         public virtual void Take(float damage) { }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (TargetCastProjectile != null && Character != null && Character.CombatMode != null)
+            {
+                Gizmos.color = Character.CombatMode.ColorTargetCastProjectile;
+                Gizmos.DrawWireSphere(TargetCastProjectile.position, Character.CombatMode.Radius);
+            }
+        }
     }
 }

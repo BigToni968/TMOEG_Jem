@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Barushi Close Combat Mode
   m_EditorClassIdentifier: 
   <Gizmo>k__BackingField: 1
+  <ColorTargetCastProjectile>k__BackingField: {r: 0, g: 0, b: 1, a: 1}
+  <Radius>k__BackingField: 0.25
   <Model>k__BackingField:
     Data:
       SpeedAttack: 0.3

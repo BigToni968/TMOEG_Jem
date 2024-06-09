@@ -20,6 +20,6 @@ public class PiercingAttack : BulletBase
     public override void Update()
     {
         base.Update();
-        gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, new Vector3(1.5f, 1.5f, 1.5f), Time.deltaTime);
+        gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, new Vector3(3f, 3f, 3f), Time.deltaTime);
     }
 }
