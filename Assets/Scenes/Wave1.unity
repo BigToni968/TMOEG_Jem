@@ -2509,7 +2509,7 @@ MonoBehaviour:
     SprintSpeed: 10
     tickHealth: 1
     DelayHealth: 2
-    HealthRecovery: 0
+    HealthRecovery: 5
   index: 0
 --- !u!54 &1349261170
 Rigidbody:
