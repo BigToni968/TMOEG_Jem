@@ -44,7 +44,7 @@ public class MainUI : MonoBehaviour
     }
     public void UpdateInfoWave()
     {
-        titleWave.SetText($"{SceneManager.GetActiveScene().buildIndex}");
+        titleWave.SetText($"Волна {SceneManager.GetActiveScene().buildIndex}");
         countEnemys.SetText($"{infoSpawnEnemy.countDeathEnemies}/{infoSpawnEnemy.AllEnemies}");
     }
     public void StopGame()
