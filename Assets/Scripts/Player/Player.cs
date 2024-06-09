@@ -50,6 +50,16 @@ public class Player : MonoBehaviour
             Bullet = SOBullets.ModelBullets[2];
             index = 2;
         }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            Bullet = SOBullets.ModelBullets[3];
+            index = 3;
+        }
+        if (Input.GetKey(KeyCode.Alpha5))
+        {
+            Bullet = SOBullets.ModelBullets[4];
+            index = 4;
+        }
         Animator.SetFloat("AtakaSpeed", Bullet.DelayShoot);
     }
 
@@ -71,13 +81,50 @@ public class Player : MonoBehaviour
     }
     public void ShootAoe()
     {
-        BulletBase bullet = Instantiate(Bullet.Prefab);
-        bullet.transform.position = SpawnPos.position;
-        bullet.transform.rotation = transform.rotation;
-        bullet.transform.Rotate(new Vector3(-90f, 0f, 0f));
-        bullet.Init(Bullet);
-        bullet.direction = transform.forward;
-        PlayerSelf.Health -= Bullet.Price;
+        if (Bullet.Prefab.GetType() == typeof(StrongAttack))
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                BulletBase bullet3 = Instantiate(Bullet.Prefab);
+                if (i == 0)
+                {
+                    bullet3.transform.position = SpawnPos.position;
+                    bullet3.transform.rotation = transform.rotation;
+                    bullet3.transform.Rotate(new Vector3(-90f, 0f, -10f));
+                    bullet3.Init(Bullet);
+                    bullet3.direction = transform.forward;
+                    PlayerSelf.Health -= Bullet.Price;
+                }
+                if (i == 1)
+                {
+                    bullet3.transform.position = SpawnPos.position;
+                    bullet3.transform.rotation = transform.rotation;
+                    bullet3.transform.Rotate(new Vector3(-90f, 0f, 0f));
+                    bullet3.Init(Bullet);
+                    bullet3.direction = transform.forward;
+
+                }
+                if (i == 2)
+                {
+                    bullet3.transform.position = SpawnPos.position;
+                    bullet3.transform.rotation = transform.rotation;
+                    bullet3.transform.Rotate(new Vector3(-90f, 0f, 10f));
+                    bullet3.Init(Bullet);
+                    bullet3.direction = transform.forward;
+                }
+
+            }
+        }
+        else
+        {
+            BulletBase bullet = Instantiate(Bullet.Prefab);
+            bullet.transform.position = SpawnPos.position;
+            bullet.transform.rotation = transform.rotation;
+            bullet.transform.Rotate(new Vector3(-90f, 0f, 0f));
+            bullet.Init(Bullet);
+            bullet.direction = transform.forward;
+            PlayerSelf.Health -= Bullet.Price;
+        }
     }
     public void ClearShoot()
     {
