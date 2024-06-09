@@ -74,7 +74,7 @@ public class MainUI : MonoBehaviour
             }
             buttonRepit.gameObject.SetActive(false);
             titeAncouments.SetText("бш оепефхкх бнкмс, мн бнимю еые ме гюйнмвеммю");
-            titeButtonAncoumentsRight.SetText("опнднкфхрэ");
+            titeButtonAncoumentsLeftNext.SetText("опнднкфхрэ");
             titeButtonAncoumentsRight.SetText("ъ сярюк ъ сунфс");
         }
         
