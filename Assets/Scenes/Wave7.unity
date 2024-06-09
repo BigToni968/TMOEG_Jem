@@ -1497,7 +1497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 806740717926391000, guid: d959d8520eabb734b90d17fec2786900, type: 3}
       propertyPath: _index
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 806740717926391000, guid: d959d8520eabb734b90d17fec2786900, type: 3}
       propertyPath: _sprites.Array.size

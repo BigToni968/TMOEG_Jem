@@ -15,9 +15,9 @@ MonoBehaviour:
   <Model>k__BackingField:
     Data:
       Prefab: {fileID: 2285511752462174185, guid: 988afee4947029b4ab090f12d8bd5488, type: 3}
-      Speed: 2.22
+      Speed: 10
       Damage: 10
-      TimeLife: 3
+      TimeLife: 10
       SoundOnDestroy: {fileID: 0}
       IsFrendlyFire: 0
       frendlyFireLists: []

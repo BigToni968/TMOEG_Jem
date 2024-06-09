@@ -15,8 +15,11 @@ public class MainUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI titleWave;
     [SerializeField] private TextMeshProUGUI countEnemys;
     [SerializeField] private TextMeshProUGUI titeAncouments;
-    [SerializeField] private TextMeshProUGUI titeButtonAncoumentsLeft;
+    [SerializeField] private TextMeshProUGUI titeButtonAncoumentsLeftRestart;
     [SerializeField] private TextMeshProUGUI titeButtonAncoumentsRight;
+    [SerializeField] private TextMeshProUGUI titeButtonAncoumentsLeftNext;
+    [SerializeField] private Button buttonNext;
+    [SerializeField] private Button buttonRepit;
     [SerializeField] private SpawnEnemy infoSpawnEnemy;
     [SerializeField] private Transform panelAncouments;
     [field: SerializeField] static public MainUI Instance { private set; get; }
@@ -41,6 +44,7 @@ public class MainUI : MonoBehaviour
         UpdateHelthBar();
         UpdateInfoWave();
         UpdateStaminaBar();
+        AncoumentsWin();
     }
     public void UpdateHelthBar()
     {
@@ -64,7 +68,14 @@ public class MainUI : MonoBehaviour
         if (infoSpawnEnemy.countDeathEnemies == infoSpawnEnemy.AllEnemies)
         {
             panelAncouments.gameObject.SetActive(true);
-            titeAncouments.SetText("");
+            if(buttonNext.gameObject != null)
+            {
+                buttonNext.gameObject.SetActive(true);
+            }
+            buttonRepit.gameObject.SetActive(false);
+            titeAncouments.SetText("¬€ œ≈–≈∆»À» ¬ŒÀÕ”, ÕŒ ¬Œ…Õ¿ ≈Ÿ≈ Õ≈ «¿ ŒÕ◊≈ÕÕ¿");
+            titeButtonAncoumentsRight.SetText("œ–ŒƒŒÀ∆»“‹");
+            titeButtonAncoumentsRight.SetText("ﬂ ”—“¿À ﬂ ”’Œ∆”");
         }
         
     }
@@ -73,9 +84,14 @@ public class MainUI : MonoBehaviour
         if (player.PlayerSelf.Health <= 0)
         {
             panelAncouments.gameObject.SetActive(true);
+            buttonRepit.gameObject.SetActive(true);
+            if (buttonNext.gameObject != null)
+            {
+                buttonNext.gameObject.SetActive(false);
+            }            
             titeAncouments.SetText(" ¿  ∆¿À‹ ¬¿ÿ¿ ƒ”ÿ¿ Œ“œ–¿¬»À¿—‹ ¬ –” » ”Ã—”√”“¿– ŒÀŒ’¿");
-            titeButtonAncoumentsLeft.SetText("“”ƒ¿ ≈… » ƒŒ–Œ√¿");
-            titeButtonAncoumentsRight.SetText("“–≈¡”ﬁ –≈¬¿Õÿ");
+            titeButtonAncoumentsLeftRestart.SetText("“–≈¡”ﬁ –≈¬¿Õÿ");
+            titeButtonAncoumentsRight.SetText("“”ƒ¿ ≈… » ƒŒ–Œ√¿");
         }
     }
 }

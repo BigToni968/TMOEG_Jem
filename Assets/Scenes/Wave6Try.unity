@@ -321,26 +321,38 @@ MonoBehaviour:
   unitEnemies: []
   waveInfo:
   - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 2
+    DelaySpawn: 1
+    WaitDestroyEnemy: 0
+    MaxEnemies: 20
+  - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
+    DelaySpawn: 1
     WaitDestroyEnemy: 0
     MaxEnemies: 5
   - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
     DelaySpawn: 3
-    WaitDestroyEnemy: 1
-    MaxEnemies: 3
-  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 5
     WaitDestroyEnemy: 0
-    MaxEnemies: 3
-  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 5
-    WaitDestroyEnemy: 0
-    MaxEnemies: 3
-  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 10
+    MaxEnemies: 15
+  - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
+    DelaySpawn: 3
     WaitDestroyEnemy: 0
     MaxEnemies: 6
-  AllEnemies: 20
+  - Character: {fileID: 11400000, guid: 7e32a50b7d23d23409ff7d39d72b1935, type: 2}
+    DelaySpawn: 5
+    WaitDestroyEnemy: 0
+    MaxEnemies: 2
+  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
+    DelaySpawn: 80
+    WaitDestroyEnemy: 0
+    MaxEnemies: 10
+  - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
+    DelaySpawn: 80
+    WaitDestroyEnemy: 0
+    MaxEnemies: 5
+  - Character: {fileID: 11400000, guid: 7e32a50b7d23d23409ff7d39d72b1935, type: 2}
+    DelaySpawn: 80
+    WaitDestroyEnemy: 0
+    MaxEnemies: 3
+  AllEnemies: 57
   countDeathEnemies: 0
   maxWaves: 0
   curentWave: 1
@@ -6800,7 +6812,7 @@ MonoBehaviour:
   Animator: {fileID: 1349261166}
   rb: {fileID: 1349261170}
   SpawnPos: {fileID: 257999872}
-  SOBullets: {fileID: 11400000, guid: ecd4d1c3b9b4fa1499ddfb3bc4166bc7, type: 2}
+  SOBullets: {fileID: 11400000, guid: 5c4365c35ba69f44185778f8c10d4ca2, type: 2}
   Bullet:
     Prefab: {fileID: 0}
     Speed: 0
@@ -6816,7 +6828,7 @@ MonoBehaviour:
     DashSpeed: 25
     RotationSpeed: 3
     SprintSpeed: 10
-    tickHealth: 0.85
+    tickHealth: 0.425
     DelayHealth: 0.4
     HealthRecovery: 5
     ReloadTimeForDash: 5
@@ -10350,6 +10362,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 4190066716194728810}
+    - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
+      propertyPath: _index
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
+      propertyPath: _sprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
+      propertyPath: _sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: e8ae84d194bb7ed40bca5d668c92f0c8, type: 3}
+    - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
+      propertyPath: _sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: cbfeece8dd785694aa6119c7d7575440, type: 3}
+    - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
+      propertyPath: _sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: f5ddd5c279bc8344c8d31445ee2da528, type: 3}
     - target: {fileID: 9051372028675796639, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: m_Name
       value: WindowGameTry

@@ -18,7 +18,7 @@ MonoBehaviour:
   <Model>k__BackingField:
     Data:
       PrjectTile: {fileID: 11400000, guid: 1a6b0faa3e19a6447b9217ad0e364b39, type: 2}
-      SpeedAttack: 3
+      SpeedAttack: 3.45
       RangeDistance: 5
       RangeAttack: 50
       DetectionRange: 100000
