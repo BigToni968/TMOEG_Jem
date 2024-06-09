@@ -38,7 +38,7 @@ MonoBehaviour:
     \u0420\u0430\u043D\u044B \u043B\u0438\u0448\u044C \u0437\u0430\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442
     \u044E\u0451\u0440\u0430 \u043E\u0442\u0441\u0442\u0443\u043F\u0438\u0442\u044C."
   <Portrate>k__BackingField: {fileID: 0}
-  <Prefab>k__BackingField: {fileID: 8850441612904240368, guid: 6c842d467b43c2d4387aed23df74daa0, type: 3}
+  <Prefab>k__BackingField: {fileID: 4219728244796797243, guid: 4a2781744bb8aa242bccdf434b0bb440, type: 3}
   <CombatMode>k__BackingField: {fileID: 0}
   <DamageHitOnDead>k__BackingField: 1
   <DelayDestroyAfterDeath>k__BackingField: 1

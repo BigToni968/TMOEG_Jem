@@ -39,8 +39,22 @@ namespace Game.UI
             {
                 GameObject.Destroy(_modelView);
             }
-            _modelView = Instantiate(GaleryResources.Resources[_index].Model);
-            _modelView.transform.localScale = GaleryResources.Resources[_index].Scale;
+
+            _modelView = Instantiate(GaleryResources.Resources[_index].Model, Vector3.one, Quaternion.identity);
+
+            if (_modelView.TryGetComponent<UnitEnemy>(out UnitEnemy enemy))
+            {
+                Destroy(enemy);
+            }
+
+            if (_modelView.TryGetComponent<Player>(out Player player))
+            {
+                Destroy(player);
+            }
+
+
+            _modelView.transform.localScale = Vector3.one * GaleryResources.Resources[_index].Scale;
+            _modelView.transform.Rotate(GaleryResources.Resources[_index].Rotate);
         }
 
         public void Leafing(int axis)
