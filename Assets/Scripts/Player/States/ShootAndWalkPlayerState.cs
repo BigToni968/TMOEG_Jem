@@ -14,7 +14,7 @@ public class ShootAndWalkPlayerState : WalkPlayerState
 
     public override void OnFinish()
     {
-        
+      
     }
 
     public override void OnStart()

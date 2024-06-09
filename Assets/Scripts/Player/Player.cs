@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        Audio.Instance.Sound.clip = Audio.Instance.clip[0];
         Bullet = SOBullets.ModelBullets[index];
         Controller = new PlayerController(this);
         Controller.Switch(new HealthStayPlayerState(Controller));
@@ -41,26 +42,64 @@ public class Player : MonoBehaviour
         {
             Bullet = SOBullets.ModelBullets[0];
             index = 0;
+            
+            //Audio.Instance.Sound.clip = Audio.Instance.clip[index];
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
+            if (SOBullets.ModelBullets.Length < 2)
+            {
+                return;
+            }
             Bullet = SOBullets.ModelBullets[1];
             index = 1;
+            //if (Audio.Instance.clip.Length < 2)
+            //{
+            //    return ;
+            //}
+            //Audio.Instance.Sound.clip = Audio.Instance.clip[index];
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
+            if (SOBullets.ModelBullets.Length < 3)
+            {
+                return;
+            }
             Bullet = SOBullets.ModelBullets[2];
             index = 2;
+            //if (Audio.Instance.clip.Length < 3)
+            //{
+            //    return;
+            //}
+            //Audio.Instance.Sound.clip = Audio.Instance.clip[index];
         }
         if (Input.GetKey(KeyCode.Alpha4))
         {
+            if (SOBullets.ModelBullets.Length < 4)
+            {
+                return;
+            }
             Bullet = SOBullets.ModelBullets[3];
             index = 3;
+            //if (Audio.Instance.clip.Length < 4)
+            //{
+            //    return;
+            //}
+            //Audio.Instance.Sound.clip = Audio.Instance.clip[3];
         }
         if (Input.GetKey(KeyCode.Alpha5))
         {
+            if (SOBullets.ModelBullets.Length < 5)
+            {
+                return;
+            }
             Bullet = SOBullets.ModelBullets[4];
             index = 4;
+            //if (Audio.Instance.clip.Length < 5)
+            //{
+            //    return;
+            //}
+            //Audio.Instance.Sound.clip = Audio.Instance.clip[4];
         }
         Animator.SetFloat("AtakaSpeed", Bullet.DelayShoot);
     }
@@ -96,6 +135,7 @@ public class Player : MonoBehaviour
                     bullet3.Init(Bullet);
                     bullet3.direction = transform.forward;
                     PlayerSelf.Health -= Bullet.Price;
+                    Audio.Instance.Sound.PlayOneShot(Audio.Instance.Sound.clip);
                 }
                 if (i == 1)
                 {
@@ -104,6 +144,7 @@ public class Player : MonoBehaviour
                     bullet3.transform.Rotate(new Vector3(-90f, 0f, 0f));
                     bullet3.Init(Bullet);
                     bullet3.direction = transform.forward;
+                    
 
                 }
                 if (i == 2)
@@ -113,6 +154,7 @@ public class Player : MonoBehaviour
                     bullet3.transform.Rotate(new Vector3(-90f, 0f, 10f));
                     bullet3.Init(Bullet);
                     bullet3.direction = transform.forward;
+                    
                 }
 
             }
@@ -126,6 +168,7 @@ public class Player : MonoBehaviour
             bullet.Init(Bullet);
             bullet.direction = transform.forward;
             PlayerSelf.Health -= Bullet.Price;
+            Audio.Instance.Sound.PlayOneShot(Audio.Instance.clip[index]);
         }
     }
     public void ClearShoot()
