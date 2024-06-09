@@ -44,6 +44,7 @@ public class HealthStayPlayerState : IdlePlayerState
             yield return tickHealth;
             if (Controller.Player.PlayerSelf.Health < Controller.Player.PlayerSelf.MaxHealth)
             {
+                Audio.Instance.Sound.PlayOneShot(Audio.Instance.health_Player[Random.RandomRange(0, Audio.Instance.health_Player.Length)]);
                 Controller.Player.PlayerSelf.Health += Controller.Player.PlayerSelf.HealthRecovery;
             }
         }

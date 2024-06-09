@@ -40,10 +40,18 @@ public class WeaponCell : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Alpha4))
         {
+            if (_sprites.Count < 4)
+            {
+                return;
+            }
             _image.sprite = _sprites[3];
         }
         if (Input.GetKey(KeyCode.Alpha5))
         {
+            if (_sprites.Count < 5)
+            {
+                return;
+            }
             _image.sprite = _sprites[4];
         }
     }

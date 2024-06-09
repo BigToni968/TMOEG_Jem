@@ -15,6 +15,7 @@ public class Audio : MonoBehaviour
     [SerializeField] public AudioClip[] ThertyAttack; 
     [SerializeField] public AudioClip[] FourthAttack; 
     [SerializeField] public AudioClip[] FiveAttack; 
+    [SerializeField] public AudioClip[] health_Player; 
 
     [SerializeField] private AudioClip buuttonClip;
     [SerializeField] public AudioClip[] hit_player;
