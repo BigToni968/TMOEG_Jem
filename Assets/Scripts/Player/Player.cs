@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Bullet = SOBullets.ModelBullets[0];
+        Bullet = SOBullets.ModelBullets[index];
         Controller = new PlayerController(this);
         Controller.Switch(new HealthStayPlayerState(Controller));
         IsShoot = new Coroutine[4];
