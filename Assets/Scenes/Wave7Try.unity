@@ -449,7 +449,7 @@ MonoBehaviour:
   - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
     DelaySpawn: 80
     WaitDestroyEnemy: 0
-    MaxEnemies: 10
+    MaxEnemies: 15
   - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
     DelaySpawn: 80
     WaitDestroyEnemy: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
     DelaySpawn: 80
     WaitDestroyEnemy: 0
     MaxEnemies: 3
-  AllEnemies: 57
+  AllEnemies: 62
   countDeathEnemies: 0
   maxWaves: 0
   curentWave: 1
@@ -8301,11 +8301,11 @@ MonoBehaviour:
     SprintSpeed: 10
     tickHealth: 0.425
     DelayHealth: 0.4
-    HealthRecovery: 5
+    HealthRecovery: 10
     ReloadTimeForDash: 5
     TimeForDash: 0
     _StaminaRecoveryKof: 0.26
-  index: 0
+  index: 4
   timer: 3
 --- !u!54 &1349261170
 Rigidbody:
@@ -13279,21 +13279,25 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
+      propertyPath: _sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: c27f891e6364f7f489548632fe2b3217, type: 3}
+    - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: _sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: e8ae84d194bb7ed40bca5d668c92f0c8, type: 3}
+      objectReference: {fileID: 21300000, guid: ac8d5f962b9d9a94089b46664ed08d9b, type: 3}
     - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: _sprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: cbfeece8dd785694aa6119c7d7575440, type: 3}
+      objectReference: {fileID: 21300000, guid: ac29a8bd1df42fe4785b24284d59f467, type: 3}
     - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: _sprites.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: f5ddd5c279bc8344c8d31445ee2da528, type: 3}
+      objectReference: {fileID: 21300000, guid: b5ec368018681f14ab3be14084b74c1a, type: 3}
     - target: {fileID: 8497884961789378630, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: _sprites.Array.data[4]
       value: 
-      objectReference: {fileID: 21300000, guid: 2462bb54f6e06a440b628866b9a4211d, type: 3}
+      objectReference: {fileID: 21300000, guid: fc2dfc7c21236114796d088960040e06, type: 3}
     - target: {fileID: 9051372028675796639, guid: b8a6eeb9c29011f40a8cfe39659e29cc, type: 3}
       propertyPath: m_Name
       value: WindowGameTry
