@@ -1217,6 +1217,7 @@ MonoBehaviour:
     DelayHealth: 5
     HealthRecovery: 2
     ReloadTimeForDash: 0
+    TimeForDash: 0
   index: 0
   timer: 3
 --- !u!114 &338454055
@@ -4170,6 +4171,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7581f354ec087c49bccdb8a12ef6204, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1082271958561512970, guid: c7581f354ec087c49bccdb8a12ef6204, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -4435,6 +4440,7 @@ MonoBehaviour:
     DelayHealth: 0.4
     HealthRecovery: 5
     ReloadTimeForDash: 5
+    TimeForDash: 0
   index: 0
   timer: 3
 --- !u!54 &1349261170
@@ -6042,6 +6048,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WindowGame
       objectReference: {fileID: 0}
+    - target: {fileID: 548084042316447323, guid: d959d8520eabb734b90d17fec2786900, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -562.99005
+      objectReference: {fileID: 0}
+    - target: {fileID: 806740717926391000, guid: d959d8520eabb734b90d17fec2786900, type: 3}
+      propertyPath: _sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: c27f891e6364f7f489548632fe2b3217, type: 3}
     - target: {fileID: 2791207683575134222, guid: d959d8520eabb734b90d17fec2786900, type: 3}
       propertyPath: m_Pivot.x
       value: 0
