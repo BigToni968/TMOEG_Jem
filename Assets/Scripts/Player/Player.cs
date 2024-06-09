@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Patterns;
 
 public class Player : MonoBehaviour
 {
@@ -61,6 +62,7 @@ public class Player : MonoBehaviour
             Bullet = SOBullets.ModelBullets[4];
             index = 4;
         }
+        Animator.SetFloat("AtakaSpeed", Bullet.DelayShoot);
     }
 
     private void FixedUpdate()

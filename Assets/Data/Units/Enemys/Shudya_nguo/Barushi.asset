@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8357290321f69484886d4dcf14b34b61, type: 3}
+  m_Name: Barushi
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: "\u0411\u0430\u0440\u0443\u0441\u0438"
+  <Description>k__BackingField: "\u0414\u0435\u043C\u043E\u043D \u0431\u0435\u0437
+    \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u044B \u0442\u0435\u043B\u0430."
+  <Portrate>k__BackingField: {fileID: 0}
+  <Prefab>k__BackingField: {fileID: 8850441612904240368, guid: 0e82c1418a031e84a97b11a9ccac1ce1, type: 3}
+  <CombatMode>k__BackingField: {fileID: 11400000, guid: a136adc4c9c21fa42a4efea431971cf0, type: 2}
+  <DamageHitOnDead>k__BackingField: 0
+  <DelayDestroyAfterDeath>k__BackingField: 1
+  <ObstacleDetectionDistance>k__BackingField: 10
+  <Stats>k__BackingField:
+    Data:
+      HP: 50
+      MaxHP: 50
+      Speed: 4
+      RotateSpeed: 10

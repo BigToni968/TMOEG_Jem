@@ -72,7 +72,10 @@ namespace Game
 
         private void Update()
         {
-            OnUpdate();
+            if (UnitControl.Current.GetType() != typeof(EnemyStateCloseCombatDead))
+            {
+                OnUpdate();
+            }
         }
     }
 }
