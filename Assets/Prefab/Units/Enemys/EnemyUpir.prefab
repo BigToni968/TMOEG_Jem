@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3792259762813147421}
   - component: {fileID: 709782591728761294}
   m_Layer: 6
-  m_Name: EnemyBarushi 1
+  m_Name: EnemyUpir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 3308957928399931307}
   <Rigidbody>k__BackingField: {fileID: 709782591728761294}
   <TargetCastProjectile>k__BackingField: {fileID: 1429692907748162712}
-  <Character>k__BackingField: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
+  <Character>k__BackingField: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
   <Stats>k__BackingField:
     Data:
       HP: 0
