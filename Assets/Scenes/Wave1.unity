@@ -1307,6 +1307,7 @@ MonoBehaviour:
     HealthRecovery: 2
     ReloadTimeForDash: 0
     TimeForDash: 0
+    _StaminaRecoveryKof: 0
   index: 0
   timer: 3
 --- !u!114 &338454055
@@ -1544,7 +1545,7 @@ Transform:
   m_GameObject: {fileID: 433157154}
   serializedVersion: 2
   m_LocalRotation: {x: -0.2013919, y: -0.019867253, z: -0.106876165, w: 0.97345984}
-  m_LocalPosition: {x: -4.2653008, y: -150.1, z: 0}
+  m_LocalPosition: {x: -7.3, y: -146.7, z: 0}
   m_LocalScale: {x: 5.8070383, y: 7.0963492, z: 7.974336}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4491,6 +4492,7 @@ MonoBehaviour:
     HealthRecovery: 5
     ReloadTimeForDash: 5
     TimeForDash: 0
+    _StaminaRecoveryKof: 0.26
   index: 0
   timer: 3
 --- !u!54 &1349261170
