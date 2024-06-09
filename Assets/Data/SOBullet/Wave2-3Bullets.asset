@@ -24,6 +24,6 @@ MonoBehaviour:
     Speed: 10
     Damage: 50
     Price: 5
-    TimeLife: 15
+    TimeLife: 10
     DelayShoot: 0.8
     MaxCountEnemy: 1

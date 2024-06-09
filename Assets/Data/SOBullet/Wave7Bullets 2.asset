@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ModelBullets:
   - Prefab: {fileID: 6739221014019584394, guid: 4f1e45dea9128774d9bd96f1f6ca2058, type: 3}
-    Speed: 15
+    Speed: 10
     Damage: 25
-    Price: 2
-    TimeLife: 10
-    DelayShoot: 1.5
+    Price: 0.5
+    TimeLife: 5
+    DelayShoot: 5
     MaxCountEnemy: 1
   - Prefab: {fileID: 6386162621862595521, guid: 49d4f3d9121dea3408fde314ec62853c, type: 3}
     Speed: 10
@@ -47,4 +47,4 @@ MonoBehaviour:
     Price: 10
     TimeLife: 10
     DelayShoot: 1.5
-    MaxCountEnemy: 3
+    MaxCountEnemy: 10
