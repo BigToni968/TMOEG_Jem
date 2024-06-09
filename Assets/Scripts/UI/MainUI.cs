@@ -14,7 +14,9 @@ public class MainUI : MonoBehaviour
     [SerializeField] private Slider StaminaBar;
     [SerializeField] private TextMeshProUGUI titleWave;
     [SerializeField] private TextMeshProUGUI countEnemys;
+    [SerializeField] private TextMeshProUGUI titeAncouments;
     [SerializeField] private SpawnEnemy infoSpawnEnemy;
+    [SerializeField] private Transform panelAncouments;
     [field: SerializeField] static public MainUI Instance { private set; get; }
 
     private void Awake()
@@ -54,5 +56,22 @@ public class MainUI : MonoBehaviour
     public void UpdateStaminaBar()
     {
         StaminaBar.value = player.timer;
+    }
+    public void AncoumentsWin()
+    {
+        if (infoSpawnEnemy.countDeathEnemies == infoSpawnEnemy.AllEnemies)
+        {
+            panelAncouments.gameObject.SetActive(true);
+            titeAncouments.SetText("œŒ¡≈ƒ¿!");
+        }
+        
+    }
+    public void AncoumentsLose()
+    {
+        if (player.PlayerSelf.Health <= 0)
+        {
+            panelAncouments.gameObject.SetActive(true);
+            titeAncouments.SetText("œ–Œ»√–€ÿ");
+        }
     }
 }

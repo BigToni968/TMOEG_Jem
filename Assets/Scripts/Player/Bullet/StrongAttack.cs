@@ -14,5 +14,9 @@ public class StrongAttack : BulletBase
             Destroy(gameObject);
 
         }
+        else if (other.GetComponent<Collider>() && !other.GetComponent<Player>() && !other.GetComponent<BulletBase>())
+        {
+            Destroy(gameObject);
+        }
     }
 }

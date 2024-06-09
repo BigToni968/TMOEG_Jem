@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1217,6 +1217,7 @@ MonoBehaviour:
     DelayHealth: 5
     HealthRecovery: 2
     ReloadTimeForDash: 0
+    TimeForDash: 0
   index: 0
   timer: 3
 --- !u!114 &338454055
@@ -4435,6 +4436,7 @@ MonoBehaviour:
     DelayHealth: 0.4
     HealthRecovery: 5
     ReloadTimeForDash: 5
+    TimeForDash: 0
   index: 0
   timer: 3
 --- !u!54 &1349261170
@@ -6150,7 +6152,8 @@ PrefabInstance:
       propertyPath: infoSpawnEnemy
       value: 
       objectReference: {fileID: 24477161}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7825633640663410077, guid: d959d8520eabb734b90d17fec2786900, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

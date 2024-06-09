@@ -16,6 +16,10 @@ public class PiercingAttack : BulletBase
                 Destroy(gameObject);
             }
         }
+        else if (other.GetComponent<Collider>() && !other.GetComponent<Player>() && !other.GetComponent<BulletBase>())
+        {
+            Destroy(gameObject);
+        }
     }
     public override void Update()
     {

@@ -42,5 +42,6 @@ public class DeathPlayerState : State
     public IEnumerator WaitAnimDeath()
     {
         yield return wait;
+        MainUI.Instance.AncoumentsLose();
     }
 }
