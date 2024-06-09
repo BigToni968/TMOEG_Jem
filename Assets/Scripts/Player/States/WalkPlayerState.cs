@@ -85,7 +85,7 @@ public class WalkPlayerState : State
         else
         {
             controller.Player.rb.velocity = (movement * controller.Player.PlayerSelf.Speed * 100 * Time.fixedDeltaTime);
-            controller.Player.timer += 0.07f * Time.fixedDeltaTime;
+            controller.Player.timer += 0.085f * Time.fixedDeltaTime;
             controller.Player.timer = Mathf.Clamp(controller.Player.timer, 0, controller.Player.PlayerSelf.ReloadTimeForDash);
         }
 
@@ -97,7 +97,7 @@ public class WalkPlayerState : State
     }
     //public void RecoveryDash()
     //{
-    //    wait ??= new WaitForSeconds(controller.Player.PlayerSelf.TimeForDash);
+    //    wait ??= new WaitForSeconds(controller.Player.PlayerSelf.ReloadTimeForDash);
     //    if (controller.Player.timer <= 0)
     //    {
     //        controller.Player.DelaySprint(DelayDash());

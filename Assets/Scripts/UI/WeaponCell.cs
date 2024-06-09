@@ -7,6 +7,12 @@ public class WeaponCell : MonoBehaviour
 {
     [SerializeField] private Image _image;
     [SerializeField] private List<Sprite> _sprites;
+    [SerializeField] private int _index;
+
+    private void Start()
+    {
+        _image.sprite = _sprites[_index];
+    }
 
     private void Update()
     {
