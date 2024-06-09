@@ -15,6 +15,8 @@ public class MainUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI titleWave;
     [SerializeField] private TextMeshProUGUI countEnemys;
     [SerializeField] private TextMeshProUGUI titeAncouments;
+    [SerializeField] private TextMeshProUGUI titeButtonAncoumentsLeft;
+    [SerializeField] private TextMeshProUGUI titeButtonAncoumentsRight;
     [SerializeField] private SpawnEnemy infoSpawnEnemy;
     [SerializeField] private Transform panelAncouments;
     [field: SerializeField] static public MainUI Instance { private set; get; }
@@ -62,7 +64,7 @@ public class MainUI : MonoBehaviour
         if (infoSpawnEnemy.countDeathEnemies == infoSpawnEnemy.AllEnemies)
         {
             panelAncouments.gameObject.SetActive(true);
-            titeAncouments.SetText("œŒ¡≈ƒ¿!");
+            titeAncouments.SetText("");
         }
         
     }
@@ -71,7 +73,9 @@ public class MainUI : MonoBehaviour
         if (player.PlayerSelf.Health <= 0)
         {
             panelAncouments.gameObject.SetActive(true);
-            titeAncouments.SetText("œ–Œ»√–€ÿ");
+            titeAncouments.SetText(" ¿  ∆¿À‹ ¬¿ÿ¿ ƒ”ÿ¿ Œ“œ–¿¬»À¿—‹ ¬ –” » ”Ã—”√”“¿– ŒÀŒ’¿");
+            titeButtonAncoumentsLeft.SetText("“”ƒ¿ ≈… » ƒŒ–Œ√¿");
+            titeButtonAncoumentsRight.SetText("“–≈¡”ﬁ –≈¬¿Õÿ");
         }
     }
 }
