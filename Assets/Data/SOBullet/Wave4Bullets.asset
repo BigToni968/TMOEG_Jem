@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 792bed89c3858e249a6eb507c677b633, type: 3}
-  m_Name: Wave4-5Bullets
+  m_Name: Wave4Bullets
   m_EditorClassIdentifier: 
   ModelBullets:
   - Prefab: {fileID: 6739221014019584394, guid: 4f1e45dea9128774d9bd96f1f6ca2058, type: 3}
@@ -29,8 +29,8 @@ MonoBehaviour:
     MaxCountEnemy: 1
   - Prefab: {fileID: -161394090310000506, guid: e6e1a5fb3c556124c8f1fa736e101364, type: 3}
     Speed: 10
-    Damage: 25
-    Price: 15
+    Damage: 20
+    Price: 10
     TimeLife: 10
     DelayShoot: 1.5
     MaxCountEnemy: 3

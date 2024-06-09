@@ -246,14 +246,30 @@ MonoBehaviour:
     WaitDestroyEnemy: 0
     MaxEnemies: 10
   - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 4
+    DelaySpawn: 3
     WaitDestroyEnemy: 0
     MaxEnemies: 15
   - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
-    DelaySpawn: 2
+    DelaySpawn: 3
     WaitDestroyEnemy: 0
     MaxEnemies: 6
-  AllEnemies: 35
+  - Character: {fileID: 11400000, guid: 7e32a50b7d23d23409ff7d39d72b1935, type: 2}
+    DelaySpawn: 5
+    WaitDestroyEnemy: 0
+    MaxEnemies: 2
+  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
+    DelaySpawn: 80
+    WaitDestroyEnemy: 0
+    MaxEnemies: 10
+  - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
+    DelaySpawn: 80
+    WaitDestroyEnemy: 0
+    MaxEnemies: 5
+  - Character: {fileID: 11400000, guid: 7e32a50b7d23d23409ff7d39d72b1935, type: 2}
+    DelaySpawn: 80
+    WaitDestroyEnemy: 0
+    MaxEnemies: 3
+  AllEnemies: 57
   countDeathEnemies: 0
   maxWaves: 0
   curentWave: 1
@@ -4705,7 +4721,7 @@ MonoBehaviour:
     DashSpeed: 20
     RotationSpeed: 3
     SprintSpeed: 50
-    tickHealth: 0.85
+    tickHealth: 0.425
     DelayHealth: 0.5
     HealthRecovery: 5
     ReloadTimeForDash: 3

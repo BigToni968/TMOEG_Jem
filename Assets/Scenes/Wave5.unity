@@ -238,22 +238,38 @@ MonoBehaviour:
   unitEnemies: []
   waveInfo:
   - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 3
+    DelaySpawn: 1
     WaitDestroyEnemy: 0
     MaxEnemies: 6
   - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
-    DelaySpawn: 2
+    DelaySpawn: 1
     WaitDestroyEnemy: 0
     MaxEnemies: 10
   - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
-    DelaySpawn: 4
-    WaitDestroyEnemy: 1
-    MaxEnemies: 5
+    DelaySpawn: 3
+    WaitDestroyEnemy: 0
+    MaxEnemies: 15
   - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
-    DelaySpawn: 2
+    DelaySpawn: 3
+    WaitDestroyEnemy: 0
+    MaxEnemies: 6
+  - Character: {fileID: 11400000, guid: 7e32a50b7d23d23409ff7d39d72b1935, type: 2}
+    DelaySpawn: 5
+    WaitDestroyEnemy: 0
+    MaxEnemies: 2
+  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
+    DelaySpawn: 80
     WaitDestroyEnemy: 0
     MaxEnemies: 10
-  AllEnemies: 31
+  - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
+    DelaySpawn: 80
+    WaitDestroyEnemy: 0
+    MaxEnemies: 5
+  - Character: {fileID: 11400000, guid: 7e32a50b7d23d23409ff7d39d72b1935, type: 2}
+    DelaySpawn: 80
+    WaitDestroyEnemy: 0
+    MaxEnemies: 3
+  AllEnemies: 57
   countDeathEnemies: 0
   maxWaves: 0
   curentWave: 1
@@ -2188,16 +2204,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 806740717926391000, guid: d959d8520eabb734b90d17fec2786900, type: 3}
       propertyPath: _index
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 806740717926391000, guid: d959d8520eabb734b90d17fec2786900, type: 3}
       propertyPath: _sprites.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 806740717926391000, guid: d959d8520eabb734b90d17fec2786900, type: 3}
       propertyPath: _sprites.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: e8ae84d194bb7ed40bca5d668c92f0c8, type: 3}
+    - target: {fileID: 806740717926391000, guid: d959d8520eabb734b90d17fec2786900, type: 3}
+      propertyPath: _sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: cbfeece8dd785694aa6119c7d7575440, type: 3}
+    - target: {fileID: 806740717926391000, guid: d959d8520eabb734b90d17fec2786900, type: 3}
+      propertyPath: _sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: f5ddd5c279bc8344c8d31445ee2da528, type: 3}
     - target: {fileID: 2791207683575134222, guid: d959d8520eabb734b90d17fec2786900, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4685,7 +4709,7 @@ MonoBehaviour:
   Animator: {fileID: 1349261166}
   rb: {fileID: 1349261170}
   SpawnPos: {fileID: 257999872}
-  SOBullets: {fileID: 11400000, guid: b87d76f5b1417ff449630169e64f2d76, type: 2}
+  SOBullets: {fileID: 11400000, guid: 83c14c439c01b654b871c2c83ee2b13c, type: 2}
   Bullet:
     Prefab: {fileID: 0}
     Speed: 0
@@ -4701,12 +4725,12 @@ MonoBehaviour:
     DashSpeed: 20
     RotationSpeed: 3
     SprintSpeed: 50
-    tickHealth: 0.85
+    tickHealth: 0.425
     DelayHealth: 0.5
     HealthRecovery: 5
     ReloadTimeForDash: 3
     TimeForDash: 0
-  index: 1
+  index: 3
   timer: 3
 --- !u!54 &1349261170
 Rigidbody:
