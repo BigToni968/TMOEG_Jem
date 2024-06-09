@@ -241,7 +241,7 @@ MonoBehaviour:
     DelaySpawn: 3
     WaitDestroyEnemy: 0
     MaxEnemies: 10
-  - Character: {fileID: 11400000, guid: a0cb1e9e2e0336c4ebcabccc895332aa, type: 2}
+  - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
     DelaySpawn: 2
     WaitDestroyEnemy: 0
     MaxEnemies: 4
@@ -249,7 +249,7 @@ MonoBehaviour:
     DelaySpawn: 4
     WaitDestroyEnemy: 1
     MaxEnemies: 15
-  - Character: {fileID: 11400000, guid: a0cb1e9e2e0336c4ebcabccc895332aa, type: 2}
+  - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
     DelaySpawn: 2
     WaitDestroyEnemy: 0
     MaxEnemies: 6
