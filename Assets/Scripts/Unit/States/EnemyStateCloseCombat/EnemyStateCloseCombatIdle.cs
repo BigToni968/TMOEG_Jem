@@ -1,3 +1,4 @@
+using MyStateMachine = Patterns.StateMachine;
 using SMState = Patterns.State;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace Game
     public class EnemyStateCloseCombatIdle : EnemyStateCloseCombatBase
     {
 
-        public EnemyStateCloseCombatIdle(Patterns.StateMachine machine) : base(machine)
+        public EnemyStateCloseCombatIdle(MyStateMachine machine) : base(machine)
         {
         }
 

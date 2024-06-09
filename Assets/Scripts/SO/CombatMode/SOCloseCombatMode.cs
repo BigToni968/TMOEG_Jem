@@ -17,11 +17,11 @@ namespace Game.Data
     [Serializable]
     public struct CloseCombatData
     {
-        public float SpeedAttack;
-        public float RangeAttack;
+        [Tooltip("Скорострельность")]public float SpeedAttack;
+        [Tooltip("Область обнаружения игрока для преследования")] public float RangeAttack;
         public float Damage;
         [Tooltip("Дистанция до которой нужно подойти к игроку чтобы урон засчитался")]
         public float Distance;
-        public float Aiming;
+        [Tooltip("Задержка перед серией ударов.")] public float Aiming;
     }
 }

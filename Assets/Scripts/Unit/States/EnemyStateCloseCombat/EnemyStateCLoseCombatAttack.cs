@@ -6,6 +6,7 @@ namespace Game
     public class EnemyStateCLoseCombatAttack : EnemyStateCloseCombatBase
     {
         private Coroutine _coroutine;
+        private Coroutine _attack;
         private WaitForSeconds _waiteAiming;
         private WaitForSeconds _delayBeetwenAttack;
 
@@ -42,9 +43,9 @@ namespace Game
                 Control.Switch(new EnemyStateCloseCombatFollov(Control));
             }
 
-            if (_coroutine == null)
+            if (_coroutine == null && _attack == null)
             {
-                _coroutine = Control.Player.StartCoroutine(Attack());
+                _attack = Control.Player.StartCoroutine(Attack());
             }
 
         }
@@ -67,7 +68,7 @@ namespace Game
                 Debug.Log($"Player Take Damage {CloseCombatMode.ReadData.Damage}");
             }
 
-            _coroutine = null;
+            _attack = null;
         }
     }
 }

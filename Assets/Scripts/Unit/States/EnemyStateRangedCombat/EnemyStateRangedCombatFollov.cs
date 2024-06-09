@@ -25,9 +25,9 @@ namespace Game
 
             Move();
 
-            if (Vector3.Distance(Control.Owner.transform.position, Control.Player.transform.position) <= CloseCombatMode.ReadData.Distance)
+            if (Vector3.Distance(Control.Owner.transform.position, Control.Player.transform.position) <= RangeCombatMode.ReadData.DetectionRange)
             {
-                Control.Switch(new EnemyStateRangedCombatAttack(Control));
+                Control.Switch(new EnemyStateRangedCombatAttackAndFollov(Control));
             }
         }
 

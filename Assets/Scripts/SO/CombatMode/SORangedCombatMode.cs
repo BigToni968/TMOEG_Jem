@@ -17,10 +17,12 @@ namespace Game.Data
     [Serializable]
     public struct RangedCombatData
     {
-        public float SpeedAttack;
-        public float RangeDistance;
-        public float RangeAttack;
-        public float DelayBeetwenAttacks;
-        public float Aiming;
+        [Tooltip("Префаб")] public SOPrjectTile PrjectTile;
+        [Tooltip("Скорострельность")] public float SpeedAttack;
+        [Tooltip("Дистанция остановки перед игроком")] public float RangeDistance;
+        [Tooltip("Область в которой мы атакуем")] public float RangeAttack;
+        [Tooltip("Область обнаружения игрока")] public float DetectionRange;
+        [Tooltip("Забыл зачем оно, простите")] public float DelayBeetwenAttacks;
+        [Tooltip("Время перед серией атак")] public float Aiming;
     }
 }

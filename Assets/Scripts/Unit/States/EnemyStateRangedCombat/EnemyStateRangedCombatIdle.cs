@@ -1,19 +1,17 @@
-using SMState = Patterns.State;
+using MyStateMachine = Patterns.StateMachine;
 using UnityEngine;
 
 namespace Game
 {
     public class EnemyStateRangedCombatIdle : EnemyStateRangedCombatBase
     {
-
-        public EnemyStateRangedCombatIdle(Patterns.StateMachine machine) : base(machine)
+        public EnemyStateRangedCombatIdle(MyStateMachine machine) : base(machine)
         {
         }
 
         public override void Update()
         {
             base.Update();
-
 
             if (Control.Player == null)
             {
@@ -29,7 +27,7 @@ namespace Game
 
         public void StayFind()
         {
-            Collider[] all = Physics.OverlapSphere(Control.Owner.transform.position, CloseCombatMode.Data.RangeAttack, LayerTarget);
+            Collider[] all = Physics.OverlapSphere(Control.Owner.transform.position, RangeCombatMode.ReadData.DetectionRange, LayerTarget);
 
             if (all.Length > 0)
             {

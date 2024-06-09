@@ -6,14 +6,14 @@ namespace Game
 {
     public class EnemyStateRangedCombatBase : EnemyStateBase
     {
-        public CloseCombatMode CloseCombatMode { get; private set; } = new();
+        public RangedCombatMode RangeCombatMode { get; private set; } = new();
         public LayerMask LayerTarget { get; protected set; }
 
         public EnemyStateRangedCombatBase(MyStateMachine machine) : base(machine)
         {
             LayerTarget = 1 << LayerMask.NameToLayer("Player");
-            SOCloseCombatMode soCloseCombat = Control.Owner.Character.CombatMode as SOCloseCombatMode;
-            CloseCombatMode.OnInit(soCloseCombat.Model.Copy());
+            SORangedCombatMode soRangedCombat = Control.Owner.Character.CombatMode as SORangedCombatMode;
+            RangeCombatMode.OnInit(soRangedCombat.Model.Copy());
         }
 
         public override void Update()
