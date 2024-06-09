@@ -1,5 +1,6 @@
 using UnityEngine;
 using Game.Data;
+using System;
 
 namespace Game
 {
@@ -8,7 +9,7 @@ namespace Game
         [field: SerializeField] public bool Gizmo { get; private set; } = false;
 
         private SOCloseCombatMode _closeCombatModel;
-
+        private SORangedCombatMode _rangedCombatMode;
         public override void Init()
         {
             base.Init();
@@ -20,7 +21,7 @@ namespace Game
             }
 
             Gizmo = Character.CombatMode.Gizmo;
-            UnitControl = Character.CombatMode.GetType() == typeof(CloseCombatMode) ? new EnemyCloseCombatControl() : new EnemyRangedCombatControl();
+            UnitControl = Character.CombatMode.GetType() == typeof(SOCloseCombatMode) ? new EnemyCloseCombatControl() : new EnemyRangedCombatControl();
             UnitControl?.Init(this);
         }
 
@@ -59,23 +60,41 @@ namespace Game
         {
             if (Gizmo && Character.CombatMode != null)
             {
-                _closeCombatModel ??= Character.CombatMode as SOCloseCombatMode;
+                if (Character.CombatMode.GetType() == typeof(SOCloseCombatMode))
+                {
+                    _closeCombatModel ??= Character.CombatMode as SOCloseCombatMode;
 
-                Gizmos.color = Color.green;
-                Gizmos.DrawWireSphere(transform.position, _closeCombatModel.Model.ReadData.RangeAttack);
-                Gizmos.color = Color.red;
-                Gizmos.DrawWireSphere(transform.position, _closeCombatModel.Model.ReadData.Distance);
-                Gizmos.color = Color.yellow;
-                Gizmos.DrawLine(transform.position, transform.position + transform.forward * Character.ObstacleDetectionDistance);
+                    Gizmos.color = Color.green;
+                    Gizmos.DrawWireSphere(transform.position, _closeCombatModel.Model.ReadData.RangeAttack);
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawWireSphere(transform.position, _closeCombatModel.Model.ReadData.Distance);
+                    Gizmos.color = Color.cyan;
+                    Gizmos.DrawWireSphere(transform.position, _closeCombatModel.Model.ReadData.Distance);
+                    Gizmos.color = Color.yellow;
+                    Gizmos.DrawLine(transform.position, transform.position + transform.forward * Character.ObstacleDetectionDistance);
+                    return;
+                }
+
+                if (Character.CombatMode.GetType() == typeof(SORangedCombatMode))
+                {
+                    _rangedCombatMode = Character.CombatMode as SORangedCombatMode;
+
+                    Gizmos.color = Color.green;
+                    Gizmos.DrawWireSphere(transform.position, _rangedCombatMode.Model.ReadData.DetectionRange);
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawWireSphere(transform.position, _rangedCombatMode.Model.ReadData.RangeAttack);
+                    Gizmos.color = Color.cyan;
+                    Gizmos.DrawWireSphere(transform.position, _rangedCombatMode.Model.ReadData.RangeDistance);
+                    Gizmos.color = Color.yellow;
+                    Gizmos.DrawLine(transform.position, transform.position + transform.forward * Character.ObstacleDetectionDistance);
+                    return;
+                }
             }
         }
 
         private void Update()
         {
-            if (UnitControl.Current.GetType() != typeof(EnemyStateCloseCombatDead))
-            {
-                OnUpdate();
-            }
+            OnUpdate();
         }
     }
 }

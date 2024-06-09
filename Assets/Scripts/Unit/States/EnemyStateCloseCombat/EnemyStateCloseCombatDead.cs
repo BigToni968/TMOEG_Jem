@@ -12,6 +12,7 @@ namespace Game
         public override void Start()
         {
             base.Start();
+            Control.Player = null;
             GameObject.Destroy(Control.Owner.gameObject, Control.Owner.Character.DelayDestroyAfterDeath);
         }
     }

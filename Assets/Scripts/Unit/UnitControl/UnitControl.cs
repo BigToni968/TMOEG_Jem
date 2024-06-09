@@ -10,7 +10,6 @@ namespace Game
         public virtual void Init(Unit data)
         {
             Owner = data;
-            Switch(new EnemyStateCloseCombatIdle(this));
         }
     }
 }

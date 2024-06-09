@@ -6,28 +6,29 @@ namespace Game
 {
     public class EnemyStateRangedCombatAttack : EnemyStateRangedCombatBase
     {
-        private Coroutine _coroutine;
+        private protected Coroutine _coroutineAiming;
+        private protected Coroutine _coroutineAttack;
         private WaitForSeconds _waiteAiming;
         private WaitForSeconds _delayBeetwenAttack;
 
         public EnemyStateRangedCombatAttack(MyStateMachine machine) : base(machine)
         {
-            _waiteAiming = new(CloseCombatMode.ReadData.Aiming);
-            _delayBeetwenAttack = new(CloseCombatMode.ReadData.SpeedAttack);
+            _waiteAiming = new(RangeCombatMode.ReadData.Aiming);
+            _delayBeetwenAttack = new(RangeCombatMode.ReadData.SpeedAttack);
         }
 
         public override void Start()
         {
             base.Start();
-            _coroutine = Control.Owner.StartCoroutine(Aiming());
+            _coroutineAiming = Control.Owner.StartCoroutine(Aiming());
         }
 
         public override void Finish()
         {
             base.Finish();
-            if (_coroutine != null)
+            if (_coroutineAiming != null)
             {
-                Control.Owner.StopCoroutine(_coroutine);
+                Control.Owner.StopCoroutine(_coroutineAiming);
             }
         }
 
@@ -38,36 +39,31 @@ namespace Game
 
             base.Update();
 
-            if (Vector3.Distance(Control.Owner.transform.position, Control.Player.transform.position) > CloseCombatMode.ReadData.Distance)
+            if (Vector3.Distance(Control.Owner.transform.position, Control.Player.transform.position) > RangeCombatMode.ReadData.RangeAttack)
             {
                 Control.Switch(new EnemyStateRangedCombatFollov(Control));
             }
 
-            if (_coroutine == null)
+            if (_coroutineAiming == null && _coroutineAttack == null)
             {
-                _coroutine = Control.Player.StartCoroutine(Attack());
+                _coroutineAttack = Control.Player.StartCoroutine(Attack());
             }
 
         }
         public IEnumerator Aiming()
         {
             yield return _waiteAiming;
-            _coroutine = null;
+            _coroutineAiming = null;
         }
 
         public IEnumerator Attack()
         {
             yield return _delayBeetwenAttack;
-
-            float health = Control.Player.PlayerSelf.Health - CloseCombatMode.ReadData.Damage;
-            Control.Player.PlayerSelf.Health = Mathf.Clamp(health, 0, Control.Player.PlayerSelf.MaxHealth);
-
-            if (Control.Owner.Character.CombatMode.Gizmo)
-            {
-                Debug.Log($"Player Take Damage {CloseCombatMode.ReadData.Damage}");
-            }
-
-            _coroutine = null;
+            //Spawn prjectile
+            EnemyProjectile projectile = GameObject.Instantiate(RangeCombatMode.ReadData.PrjectTile.Model.ReadData.Prefab, Control.Owner.TargetCastProjectile.position, Quaternion.identity);
+            projectile.Direction = Control.Owner.transform.forward;
+            projectile.Init(RangeCombatMode.ReadData.PrjectTile.Model);
+            _coroutineAttack = null;
         }
     }
 }
