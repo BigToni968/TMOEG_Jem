@@ -14,6 +14,7 @@ namespace Game.Data
     {
         public GameObject Model;
         public Character Character;
-        public Vector3 Scale;
+        public float Scale;
+        public Vector3 Rotate;
     }
 }
