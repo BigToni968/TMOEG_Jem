@@ -2,16 +2,20 @@ using UnityEngine;
 
 public abstract class BulletBase : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rb;
+    public Rigidbody rb;
     public ModelBullet Bullet;
     public Vector3 direction;
+    public bool IsMove = true;
     public virtual void Move()
     {
-        rb.velocity = direction * Bullet.Speed;
+        transform.Translate(Vector3.down * Bullet.Speed * Time.deltaTime);
     }
-    private void Update()
+    public virtual void Update()
     {
-        Move();
+        if (IsMove)
+        {
+            Move();
+        }
         Remove();
     }
     public void Remove()

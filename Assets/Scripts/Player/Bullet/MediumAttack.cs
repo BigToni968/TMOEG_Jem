@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StrongAttack : BulletBase
+public class MediumAttack : BulletBase
 {
     private void OnTriggerEnter(Collider other)
     {
@@ -11,8 +11,10 @@ public class StrongAttack : BulletBase
         {
             Bullet.MaxCountEnemy--;
             hit.Take(Bullet.Damage);
-            Destroy(gameObject);
-
+            if (Bullet.MaxCountEnemy <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
