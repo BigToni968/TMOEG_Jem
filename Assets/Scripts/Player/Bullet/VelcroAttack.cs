@@ -17,6 +17,10 @@ public class VelcroAttack : BulletBase
             rb.isKinematic = true;
             StartCoroutine(DelayAttack(hit));
         }
+        else if (other.GetComponent<Collider>() && !other.GetComponent<Player>() && !other.GetComponent<BulletBase>())
+        {
+            Destroy(gameObject);
+        }
     }
     public IEnumerator DelayAttack(IDamageHit hit)
     {

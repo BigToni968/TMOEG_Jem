@@ -61,6 +61,7 @@ namespace Game
 
             float health = Control.Player.PlayerSelf.Health - CloseCombatMode.ReadData.Damage;
             Control.Player.PlayerSelf.Health = Mathf.Clamp(health, 0, Control.Player.PlayerSelf.MaxHealth);
+            Audio.Instance.Sound.PlayOneShot(Audio.Instance.hit_player[Random.Range(0, Audio.Instance.hit_player.Length)]);
 
             if (Control.Owner.Character.CombatMode.Gizmo)
             {

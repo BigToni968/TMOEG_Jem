@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Patterns;
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        if (Audio.Instance.FirstAttack.Length > 0)
+        {
+            Audio.Instance.Sound.clip = Audio.Instance.FirstAttack[Random.Range(0, Audio.Instance.FirstAttack.Length)];
+        }
         Bullet = SOBullets.ModelBullets[index];
         Controller = new PlayerController(this);
         Controller.Switch(new HealthStayPlayerState(Controller));
@@ -41,26 +46,62 @@ public class Player : MonoBehaviour
         {
             Bullet = SOBullets.ModelBullets[0];
             index = 0;
+            if (Audio.Instance.FirstAttack.Length > 0)
+            {
+                Audio.Instance.Sound.clip = Audio.Instance.FirstAttack[Random.Range(0, Audio.Instance.FirstAttack.Length)];
+            }
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
+            if (SOBullets.ModelBullets.Length < 2)
+            {
+                return;
+            }
             Bullet = SOBullets.ModelBullets[1];
             index = 1;
+            if (Audio.Instance.SecondaryAttack.Length > 0)
+            {
+                Audio.Instance.Sound.clip = Audio.Instance.SecondaryAttack[Random.Range(0, Audio.Instance.SecondaryAttack.Length)];
+            }
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
+            if (SOBullets.ModelBullets.Length < 3)
+            {
+                return;
+            }
             Bullet = SOBullets.ModelBullets[2];
             index = 2;
+            if (Audio.Instance.ThertyAttack.Length > 0)
+            {
+                Audio.Instance.Sound.clip = Audio.Instance.ThertyAttack[Random.Range(0, Audio.Instance.ThertyAttack.Length)];
+            }
         }
         if (Input.GetKey(KeyCode.Alpha4))
         {
+            if (SOBullets.ModelBullets.Length < 4)
+            {
+                return;
+            }
             Bullet = SOBullets.ModelBullets[3];
             index = 3;
+            if (Audio.Instance.FourthAttack.Length > 0)
+            {
+                Audio.Instance.Sound.clip = Audio.Instance.FourthAttack[Random.Range(0, Audio.Instance.FourthAttack.Length)];
+            }
         }
         if (Input.GetKey(KeyCode.Alpha5))
         {
+            if (SOBullets.ModelBullets.Length < 5)
+            {
+                return;
+            }
             Bullet = SOBullets.ModelBullets[4];
             index = 4;
+            if (Audio.Instance.FiveAttack.Length > 0)
+            {
+                Audio.Instance.Sound.clip = Audio.Instance.FiveAttack[Random.Range(0, Audio.Instance.FiveAttack.Length)];
+            }
         }
         Animator.SetFloat("AtakaSpeed", Bullet.DelayShoot);
     }
@@ -96,6 +137,7 @@ public class Player : MonoBehaviour
                     bullet3.Init(Bullet);
                     bullet3.direction = transform.forward;
                     PlayerSelf.Health -= Bullet.Price;
+                    Audio.Instance.Sound.PlayOneShot(Audio.Instance.Sound.clip);
                 }
                 if (i == 1)
                 {
@@ -105,6 +147,7 @@ public class Player : MonoBehaviour
                     bullet3.Init(Bullet);
                     bullet3.direction = transform.forward;
 
+
                 }
                 if (i == 2)
                 {
@@ -113,6 +156,7 @@ public class Player : MonoBehaviour
                     bullet3.transform.Rotate(new Vector3(-90f, 0f, 10f));
                     bullet3.Init(Bullet);
                     bullet3.direction = transform.forward;
+
                 }
 
             }
@@ -126,6 +170,7 @@ public class Player : MonoBehaviour
             bullet.Init(Bullet);
             bullet.direction = transform.forward;
             PlayerSelf.Health -= Bullet.Price;
+            Audio.Instance.Sound.PlayOneShot(Audio.Instance.Sound.clip);
         }
     }
     public void ClearShoot()
@@ -138,7 +183,7 @@ public class Player : MonoBehaviour
         {
             coroutineDash = StartCoroutine(enumerator);
         }
-    }  
+    }
 
     public void LookToMouse()
     {
@@ -171,4 +216,6 @@ public struct ModelPlayer
     public float DelayHealth;
     public float HealthRecovery;
     public float ReloadTimeForDash;
+    public float TimeForDash;
+    public float _StaminaRecoveryKof;// = 0.09f;
 }

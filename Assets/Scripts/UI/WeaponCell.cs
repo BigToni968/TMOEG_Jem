@@ -16,17 +16,35 @@ public class WeaponCell : MonoBehaviour
 
     private void Update()
     {
+        
         if (Input.GetKey(KeyCode.Alpha1))
         {
             _image.sprite = _sprites[0];
         }
+
         if (Input.GetKey(KeyCode.Alpha2))
         {
+            if (_sprites.Count < 2)
+            {
+                return;
+            }
             _image.sprite = _sprites[1];
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
+            if (_sprites.Count < 3)
+            {
+                return;
+            }
             _image.sprite = _sprites[2];
+        }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            _image.sprite = _sprites[3];
+        }
+        if (Input.GetKey(KeyCode.Alpha5))
+        {
+            _image.sprite = _sprites[4];
         }
     }
 }

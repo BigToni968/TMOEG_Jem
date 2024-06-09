@@ -16,7 +16,8 @@ public class ShootPlayerState : State
 
     public override void OnFinish()
     {
-
+        
+        
     }
 
     public override void OnFixedUpdate()
