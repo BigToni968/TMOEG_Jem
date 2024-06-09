@@ -217,4 +217,5 @@ public struct ModelPlayer
     public float HealthRecovery;
     public float ReloadTimeForDash;
     public float TimeForDash;
+    public float _StaminaRecoveryKof;// = 0.09f;
 }
