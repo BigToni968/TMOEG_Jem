@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitEnemies: []
   waveInfo:
-  - Character: {fileID: 11400000, guid: 7e32a50b7d23d23409ff7d39d72b1935, type: 2}
+  - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
     DelaySpawn: 5
     WaitDestroyEnemy: 1
     MaxEnemies: 10
@@ -1482,7 +1482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 0, z: -15}
+  m_FollowOffset: {x: 0, y: -10, z: -15}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1577,8 +1577,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 16.04, z: -0.000043809414}
+  m_LocalRotation: {x: 0.43055636, y: 0, z: 0, w: 0.90256375}
+  m_LocalPosition: {x: 0, y: 16.03997, z: -10.080044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1643,7 +1643,7 @@ Transform:
   m_GameObject: {fileID: 981821791}
   serializedVersion: 2
   m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: -0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2494,7 +2494,7 @@ MonoBehaviour:
     MaxCountEnemy: 0
   PlayerSelf:
     MaxHealth: 100
-    Health: 50
+    Health: 100
     Speed: 10
     DashSpeed: 10
     RotationSpeed: 3
@@ -3186,14 +3186,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035116766}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 16.04, z: -0.000043809414}
+  m_LocalRotation: {x: 0.43055636, y: -0, z: -0, w: 0.90256375}
+  m_LocalPosition: {x: 0, y: 16.03997, z: -10.080044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 847007044}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 51.006, y: 0, z: 0}
 --- !u!224 &873772495166088534
 RectTransform:
   m_ObjectHideFlags: 0
