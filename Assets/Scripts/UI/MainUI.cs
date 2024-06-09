@@ -11,6 +11,7 @@ public class MainUI : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private Slider healthBar;
+    [SerializeField] private Slider StaminaBar;
     [SerializeField] private TextMeshProUGUI titleWave;
     [SerializeField] private TextMeshProUGUI countEnemys;
     [SerializeField] private SpawnEnemy infoSpawnEnemy;
@@ -35,6 +36,7 @@ public class MainUI : MonoBehaviour
     {
         UpdateHelthBar();
         UpdateInfoWave();
+        UpdateStaminaBar();
     }
     public void UpdateHelthBar()
     {
@@ -48,5 +50,9 @@ public class MainUI : MonoBehaviour
     public void StopGame()
     {
         Time.timeScale = 0f;
+    }
+    public void UpdateStaminaBar()
+    {
+        StaminaBar.value = player.timer;
     }
 }
