@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Wave2.unity
     guid: 220f7506dab5ed443a6d668324bb1b2a
   - enabled: 1
+    path: Assets/Scenes/Wave3.unity
+    guid: 6f06cee94f8141a4481c4e42b2422698
+  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: c1d5bbb67869a674daebfea9bf0e0c92
   m_configObjects: {}
