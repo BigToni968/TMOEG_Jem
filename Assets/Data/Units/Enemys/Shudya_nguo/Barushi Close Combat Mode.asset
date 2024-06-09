@@ -15,8 +15,8 @@ MonoBehaviour:
   <Gizmo>k__BackingField: 1
   <Model>k__BackingField:
     Data:
-      SpeedAttack: 1
+      SpeedAttack: 0.3
       RangeAttack: 1000000
-      Damage: 10
-      Distance: 2
-      Aiming: 1
+      Damage: 2.5
+      Distance: 1.8
+      Aiming: -0.3

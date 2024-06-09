@@ -20,10 +20,10 @@ MonoBehaviour:
   <CombatMode>k__BackingField: {fileID: 11400000, guid: a136adc4c9c21fa42a4efea431971cf0, type: 2}
   <DamageHitOnDead>k__BackingField: 0
   <DelayDestroyAfterDeath>k__BackingField: 1
-  <ObstacleDetectionDistance>k__BackingField: 5
+  <ObstacleDetectionDistance>k__BackingField: 10
   <Stats>k__BackingField:
     Data:
       HP: 50
       MaxHP: 50
-      Speed: 2
+      Speed: 3
       RotateSpeed: 10
