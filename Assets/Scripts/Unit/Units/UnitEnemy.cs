@@ -28,7 +28,7 @@ namespace Game
         public override void OnUpdate()
         {
             base.OnUpdate();
-            if (UnitControl != null && UnitControl.Player != null)
+            if (UnitControl != null && UnitControl.Player != null && UnitControl.Owner.Stats.ReadData.HP > 0f)
             {
                 LookToPlayer();
             }
