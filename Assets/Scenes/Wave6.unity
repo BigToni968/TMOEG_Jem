@@ -240,11 +240,11 @@ MonoBehaviour:
   - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
     DelaySpawn: 1
     WaitDestroyEnemy: 0
-    MaxEnemies: 6
+    MaxEnemies: 20
   - Character: {fileID: 11400000, guid: a6feda58f1739e3439552f1f0ee2d235, type: 2}
     DelaySpawn: 1
     WaitDestroyEnemy: 0
-    MaxEnemies: 10
+    MaxEnemies: 5
   - Character: {fileID: 11400000, guid: e0071ca322a4b9247a0a3962d2783b67, type: 2}
     DelaySpawn: 3
     WaitDestroyEnemy: 0
