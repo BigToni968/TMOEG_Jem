@@ -25,5 +25,5 @@ MonoBehaviour:
     Data:
       HP: 50
       MaxHP: 50
-      Speed: 3
+      Speed: 4
       RotateSpeed: 10
