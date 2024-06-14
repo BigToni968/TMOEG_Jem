@@ -8,7 +8,7 @@ public abstract class BulletBase : MonoBehaviour
     public bool IsMove = true;
     public virtual void Move()
     {
-        transform.Translate(Vector3.down * Bullet.Speed * Time.deltaTime);
+        transform.Translate(direction * Bullet.Speed * Time.deltaTime);
     }
     public virtual void Update()
     {

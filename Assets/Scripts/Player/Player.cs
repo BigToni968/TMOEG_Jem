@@ -168,7 +168,9 @@ public class Player : MonoBehaviour
             bullet.transform.rotation = transform.rotation;
             bullet.transform.Rotate(new Vector3(-90f, 0f, 0f));
             bullet.Init(Bullet);
-            bullet.direction = transform.forward;
+            Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouse.z = transform.position.z;
+            bullet.direction = transform.position - mouse;
             PlayerSelf.Health -= Bullet.Price;
             Audio.Instance.Sound.PlayOneShot(Audio.Instance.Sound.clip);
         }

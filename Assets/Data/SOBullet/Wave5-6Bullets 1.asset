@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave5-6Bullets 1
   m_EditorClassIdentifier: 
   ModelBullets:
-  - Prefab: {fileID: 6739221014019584394, guid: 4f1e45dea9128774d9bd96f1f6ca2058, type: 3}
+  - Prefab: {fileID: 4064761724273571037, guid: 7441bac980ffb384788cafd571f9d6ad, type: 3}
     Speed: 15
     Damage: 25
     Price: 1
